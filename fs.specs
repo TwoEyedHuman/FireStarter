@@ -1,0 +1,22 @@
+Iteration 1:
+	Display the base tile set.
+	Character movement on the grid.
+
+Iteration 2:
+	Limit character movement to valid spaces.
+	Add in character item carry.
+	Add in timer to dim the screen periodically.
+
+Iteration 3:
+	Add in capability for character to place itemlight in a given square.
+	Have light protect that square from darkness.
+
+Iteration 4:
+	Add in dogs, and random movement on valid squares.
+
+Iteration 5: 
+	Add in dogs going towards player.
+	Add a lose condition and win condition.
+
+Iteration 6:
+	Randomized tile set.
