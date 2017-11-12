@@ -7,7 +7,6 @@ import (
 	"github.com/faiface/pixel"
 	"github.com/faiface/pixel/pixelgl"
 	"golang.org/x/image/colornames"
-	"time"
 )
 
 type item struct {
@@ -63,10 +62,10 @@ func loadPicture(path string) (pixel.Picture, error) {
 }
 
 func buildSpriteMoves(sm * spriteMove, spritesheet pixel.Picture) {
-	sm.standUp = pixel.NewSprite(spritesheet, pixel.R(36+10, 36, 72+10, 72))
-	sm.standDown = pixel.NewSprite(spritesheet, pixel.R(36+10, 108, 72+10, 144))
-	sm.standLeft = pixel.NewSprite(spritesheet, pixel.R(36+10, 0, 72+10, 36))
-	sm.standRight = pixel.NewSprite(spritesheet, pixel.R(36+10, 72, 72+10, 108))
+	sm.StandUp = pixel.NewSprite(spritesheet, pixel.R(36+10, 36, 72+10, 72))
+	sm.StandDown = pixel.NewSprite(spritesheet, pixel.R(36+10, 108, 72+10, 144))
+	sm.StandLeft = pixel.NewSprite(spritesheet, pixel.R(36+10, 0, 72+10, 36))
+	sm.StandRight = pixel.NewSprite(spritesheet, pixel.R(36+10, 72, 72+10, 108))
 	sm.walkUp = pixel.NewSprite(spritesheet, pixel.R(0, 36, 36, 72))
 	sm.walkDown = pixel.NewSprite(spritesheet, pixel.R(0, 108, 36, 144))
 	sm.walkLeft = pixel.NewSprite(spritesheet, pixel.R(0, 0, 36, 36))
@@ -77,13 +76,12 @@ func buildSpriteMoves(sm * spriteMove, spritesheet pixel.Picture) {
 	sm.walkRightAlt = pixel.NewSprite(spritesheet, pixel.R(72+20, 72, 108+20, 108))
 }
 
-func initializePlayer(plr * player, ms * spriteMove) {
+func initializePlayer(plr * player) {
 	plr.pos.X = float64(32 + ((8-1)*64))
 	plr.pos.Y = float64(32 + ((8-1)*64))
 	plr.disp.X = float64(0)
 	plr.disp.Y = float64(0)
 	plr.dispTime = 0
-	plr.sprite = ms.standDown
 }
 
 func moveUpdate(plr * player, direction string, moveSheet * spriteMove) {
@@ -110,28 +108,9 @@ func moveUpdate(plr * player, direction string, moveSheet * spriteMove) {
 			plr.disp.X = -64
 			plr.disp.Y = 0
 			plr.dispTime = 64
-			plr.pos.X += 64
+			plr.pos.X -= 64
 			plr.sprite = moveSheet.walkRight
 		}
-	}
-}
-
-func updateDisp(plr *player, dec float64) {
-	if plr.disp.X == 0 && plr.disp.Y > 0 && plr.dispTime > 0 {
-		plr.disp.Y = plr.disp.Y - float64(64*dec)
-		plr.dispTime -= float64(64*dec)
-	} else if plr.disp.X == 0 && plr.disp.Y < 0 && plr.dispTime > 0 {
-		plr.disp.Y = plr.disp.Y + float64(64*dec)
-		plr.dispTime -= float64(64*dec)
-	} else if plr.disp.Y == 0  && plr.disp.X > 0 && plr.dispTime > 0 {
-		plr.disp.X = plr.disp.X - float64(64*dec)
-		plr.dispTime -= float64(64*dec)
-	} else if plr.disp.Y == 0 && plr.disp.X < 0 && plr.dispTime > 0{
-		plr.disp.X = plr.disp.X + float64(64*dec)
-		plr.dispTime -= float64(64*dec)
-	} else {
-		plr.disp = pixel.V(0.00, 0.00)
-		plr.dispTime = 0
 	}
 }
 
@@ -154,43 +133,25 @@ func run() {
 	mapBase := pixel.NewSprite(mapPic, mapPic.Bounds())
 
 	//Build the structure of player movement sprites
-	playerSpritesheet, err := loadPicture("MainGuySpriteSheet.png")
-	if err!= nil {
-		panic(err)
-	}
+	playerSpritsheet, err := loadPicture("MainGuySpriteSheet.png")
 	var playerMoves spriteMove
 	buildSpriteMoves(&playerMoves, playerSpritesheet)
 
-	//Initialize the player
-	var plr player
-	initializePlayer(&plr, &playerMoves)
-
-	last := time.Now() //Initialize the time for determine time difference
-	dt := time.Since(last).Seconds()
-
 	for !win.Closed() {
-		dt = time.Since(last).Seconds()
-		last = time.Now()
-
-		//Check for user input and react
+		//Check for user input
 		if win.Pressed(pixelgl.KeyUp) {
-			moveUpdate(&plr, "U", &playerMoves)
+			moveUpdate(
 		} else if win.Pressed(pixelgl.KeyDown) {
-			moveUpdate(&plr, "D", &playerMoves)
-		} else if win.Pressed(pixelgl.KeyLeft) {
-			moveUpdate(&plr, "L", &playerMoves)
-		} else if win.Pressed(pixelgl.KeyRight) {
-			moveUpdate(&plr, "R", &playerMoves)
-		}
 
-		//Update player displacement
-		updateDisp(&plr, dt)
+		} else if win.Pressed(pixelgl.KeyLeft) {
+
+		} else if win.Pressed(pixelgl.KeyRight) {
+
+		}
 
 		win.Clear(colornames.Aliceblue)
 
-		//Draw everything to screen		
 		mapBase.Draw(win, pixel.IM.Moved(win.Bounds().Center()))
-		plr.sprite.Draw(win, pixel.IM.Scaled(pixel.ZV, 1).Moved(plr.pos.Add(plr.disp)))
 
 		win.Update()
 	}
