@@ -10,6 +10,9 @@ import (
 	"time"
 )
 
+const tileCount int = 32
+const pixelPerGrid int = 16
+
 type item struct {
 	sprite *pixel.Sprite
 	pos pixel.Vec
@@ -78,8 +81,8 @@ func buildSpriteMoves(sm * spriteMove, spritesheet pixel.Picture) {
 }
 
 func initializePlayer(plr * player, ms * spriteMove) {
-	plr.pos.X = float64(32 + ((8-1)*64))
-	plr.pos.Y = float64(32 + ((8-1)*64))
+	plr.pos.X = float64(pixelPerGrid/2 + ((tileCount-1)*pixelPerGrid))
+	plr.pos.Y = float64(pixelPerGrid/2 + ((tileCount-1)*pixelPerGrid))
 	plr.disp.X = float64(0)
 	plr.disp.Y = float64(0)
 	plr.dispTime = 0
@@ -89,28 +92,28 @@ func initializePlayer(plr * player, ms * spriteMove) {
 func moveUpdate(plr * player, direction string, moveSheet * spriteMove) {
 	if plr.disp.Len() < 0.01 {
 		if direction == "U" {
-			plr.disp.Y = -64
+			plr.disp.Y = -1 * float64(pixelPerGrid)
 			plr.disp.X = 0
-			plr.dispTime = 64
-			plr.pos.Y += 64
+			plr.dispTime = float64(pixelPerGrid)
+			plr.pos.Y += float64(pixelPerGrid)
 			plr.sprite = moveSheet.walkUp
 		} else if direction == "D" {
-			plr.disp.Y = 64
+			plr.disp.Y = float64(pixelPerGrid)
 			plr.disp.X = 0
-			plr.dispTime = 64
-			plr.pos.Y -= 64
+			plr.dispTime = float64(pixelPerGrid)
+			plr.pos.Y -= float64(pixelPerGrid)
 			plr.sprite = moveSheet.walkDown
 		} else if direction == "L" {
-			plr.disp.X = 64
+			plr.disp.X = float64(pixelPerGrid)
 			plr.disp.Y = 0
-			plr.dispTime = 64
-			plr.pos.X -= 64
+			plr.dispTime = float64(pixelPerGrid)
+			plr.pos.X -= float64(pixelPerGrid)
 			plr.sprite = moveSheet.walkLeft
 		} else if direction == "R" {
-			plr.disp.X = -64
+			plr.disp.X = -1 * float64(pixelPerGrid)
 			plr.disp.Y = 0
-			plr.dispTime = 64
-			plr.pos.X += 64
+			plr.dispTime = float64(pixelPerGrid)
+			plr.pos.X += float64(pixelPerGrid)
 			plr.sprite = moveSheet.walkRight
 		}
 	}
@@ -118,17 +121,17 @@ func moveUpdate(plr * player, direction string, moveSheet * spriteMove) {
 
 func updateDisp(plr *player, dec float64) {
 	if plr.disp.X == 0 && plr.disp.Y > 0 && plr.dispTime > 0 {
-		plr.disp.Y = plr.disp.Y - float64(64*dec)
-		plr.dispTime -= float64(64*dec)
+		plr.disp.Y = plr.disp.Y - float64(pixelPerGrid)*dec
+		plr.dispTime -= float64(pixelPerGrid)*dec
 	} else if plr.disp.X == 0 && plr.disp.Y < 0 && plr.dispTime > 0 {
-		plr.disp.Y = plr.disp.Y + float64(64*dec)
-		plr.dispTime -= float64(64*dec)
+		plr.disp.Y = plr.disp.Y + float64(pixelPerGrid)*dec
+		plr.dispTime -= float64(pixelPerGrid)*dec
 	} else if plr.disp.Y == 0  && plr.disp.X > 0 && plr.dispTime > 0 {
-		plr.disp.X = plr.disp.X - float64(64*dec)
-		plr.dispTime -= float64(64*dec)
+		plr.disp.X = plr.disp.X - float64(pixelPerGrid)*dec
+		plr.dispTime -= float64(pixelPerGrid)*dec
 	} else if plr.disp.Y == 0 && plr.disp.X < 0 && plr.dispTime > 0{
-		plr.disp.X = plr.disp.X + float64(64*dec)
-		plr.dispTime -= float64(64*dec)
+		plr.disp.X = plr.disp.X + float64(pixelPerGrid)*dec
+		plr.dispTime -= float64(pixelPerGrid)*dec
 	} else {
 		plr.disp = pixel.V(0.00, 0.00)
 		plr.dispTime = 0
