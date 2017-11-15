@@ -8,6 +8,7 @@ import (
 	"github.com/faiface/pixel/pixelgl"
 	"golang.org/x/image/colornames"
 	"time"
+	"fmt"
 )
 
 const tileCount int = 32
@@ -90,6 +91,7 @@ func initializePlayer(plr * player, ms * spriteMove) {
 }
 
 func initializeValidSpaces(vs [][]int) {
+	fmt.Println("Initializing valid spaces.")
 	//initialize all squares to valid edges
 	for i:= 0; i<tileCount; i++ {
 		for j:=0; j<tileCount; j++ {
@@ -103,12 +105,12 @@ func initializeValidSpaces(vs [][]int) {
 		vs[0][tileCount-1] = 0
 		vs[tileCount-1][0] = 0
 	}
-	return vs
+	fmt.Println("Finalizing valid spaces.")
 }
 
 //(cur.X - 8)/PPG + 1
-func dispToGrid(disp int) {
-	return	(disp - pixelPerGrid/2)/pixelPerGrid + 1
+func dispToGrid(disp float64) int {
+	return	int((int(disp) - pixelPerGrid/2)/pixelPerGrid + 1)
 }
 
 func moveUpdate(plr * player, direction string, moveSheet * spriteMove, vs [][]int) {
@@ -203,8 +205,8 @@ func run() {
 	var plr player
 	initializePlayer(&plr, &playerMoves)
 
-	validSpaces := [][]int
-	validSpaces = initializeValidSpaces(&validSpaces)
+	var validSpaces [][]int
+	initializeValidSpaces(validSpaces)
 
 	last := time.Now() //Initialize the time for determine time difference
 	dt := time.Since(last).Seconds()
@@ -215,13 +217,13 @@ func run() {
 
 		//Check for user input and react
 		if win.Pressed(pixelgl.KeyUp) {
-			moveUpdate(&plr, "U", &playerMoves)
+			moveUpdate(&plr, "U", &playerMoves, validSpaces)
 		} else if win.Pressed(pixelgl.KeyDown) {
-			moveUpdate(&plr, "D", &playerMoves)
+			moveUpdate(&plr, "D", &playerMoves, validSpaces)
 		} else if win.Pressed(pixelgl.KeyLeft) {
-			moveUpdate(&plr, "L", &playerMoves)
+			moveUpdate(&plr, "L", &playerMoves, validSpaces)
 		} else if win.Pressed(pixelgl.KeyRight) {
-			moveUpdate(&plr, "R", &playerMoves)
+			moveUpdate(&plr, "R", &playerMoves, validSpaces)
 		}
 
 		//Update player displacement
