@@ -89,33 +89,68 @@ func initializePlayer(plr * player, ms * spriteMove) {
 	plr.sprite = ms.standDown
 }
 
-func moveUpdate(plr * player, direction string, moveSheet * spriteMove) {
-	if plr.disp.Len() < 0.01 {
-		if direction == "U" {
-			plr.disp.Y = -1 * float64(pixelPerGrid)
-			plr.disp.X = 0
-			plr.dispTime = float64(pixelPerGrid)
-			plr.pos.Y += float64(pixelPerGrid)
-			plr.sprite = moveSheet.walkUp
-		} else if direction == "D" {
-			plr.disp.Y = float64(pixelPerGrid)
-			plr.disp.X = 0
-			plr.dispTime = float64(pixelPerGrid)
-			plr.pos.Y -= float64(pixelPerGrid)
-			plr.sprite = moveSheet.walkDown
-		} else if direction == "L" {
-			plr.disp.X = float64(pixelPerGrid)
-			plr.disp.Y = 0
-			plr.dispTime = float64(pixelPerGrid)
-			plr.pos.X -= float64(pixelPerGrid)
-			plr.sprite = moveSheet.walkLeft
-		} else if direction == "R" {
-			plr.disp.X = -1 * float64(pixelPerGrid)
-			plr.disp.Y = 0
-			plr.dispTime = float64(pixelPerGrid)
-			plr.pos.X += float64(pixelPerGrid)
-			plr.sprite = moveSheet.walkRight
+func initializeValidSpaces(vs [][]int) {
+	//initialize all squares to valid edges
+	for i:= 0; i<tileCount; i++ {
+		for j:=0; j<tileCount; j++ {
+			vs[i][j] = 1
 		}
+	}
+	//outer edge boundary
+	for i:=0; i<tileCount; i++ {
+		vs[0][i] = 0
+		vs[i][0] = 0
+		vs[0][tileCount-1] = 0
+		vs[tileCount-1][0] = 0
+	}
+	return vs
+}
+
+//(cur.X - 8)/PPG + 1
+func dispToGrid(disp int) {
+	return	(disp - pixelPerGrid/2)/pixelPerGrid + 1
+}
+
+func moveUpdate(plr * player, direction string, moveSheet * spriteMove, vs [][]int) {
+	if plr.disp.Len() > 0.01 {
+		return
+	}
+	if direction == "U" {
+		if vs[dispToGrid(plr.pos.X)][dispToGrid(plr.pos.Y)+1] == 0 {
+			return
+		}
+		plr.disp.Y = -1 * float64(pixelPerGrid)
+		plr.disp.X = 0
+		plr.dispTime = float64(pixelPerGrid)
+		plr.pos.Y += float64(pixelPerGrid)
+		plr.sprite = moveSheet.walkUp
+	} else if direction == "D" {
+		if vs[dispToGrid(plr.pos.X)][dispToGrid(plr.pos.Y)+1] == 0 {
+			return
+		}
+		plr.disp.Y = float64(pixelPerGrid)
+		plr.disp.X = 0
+		plr.dispTime = float64(pixelPerGrid)
+		plr.pos.Y -= float64(pixelPerGrid)
+		plr.sprite = moveSheet.walkDown
+	} else if direction == "L" {
+		if vs[dispToGrid(plr.pos.X)][dispToGrid(plr.pos.Y)+1] == 0 {
+			return
+		}
+		plr.disp.X = float64(pixelPerGrid)
+		plr.disp.Y = 0
+		plr.dispTime = float64(pixelPerGrid)
+		plr.pos.X -= float64(pixelPerGrid)
+		plr.sprite = moveSheet.walkLeft
+	} else if direction == "R" {
+		if vs[dispToGrid(plr.pos.X)][dispToGrid(plr.pos.Y)+1] == 0 {
+			return
+		}
+		plr.disp.X = -1 * float64(pixelPerGrid)
+		plr.disp.Y = 0
+		plr.dispTime = float64(pixelPerGrid)
+		plr.pos.X += float64(pixelPerGrid)
+		plr.sprite = moveSheet.walkRight
 	}
 }
 
@@ -167,6 +202,9 @@ func run() {
 	//Initialize the player
 	var plr player
 	initializePlayer(&plr, &playerMoves)
+
+	validSpaces := [][]int
+	validSpaces = initializeValidSpaces(&validSpaces)
 
 	last := time.Now() //Initialize the time for determine time difference
 	dt := time.Since(last).Seconds()
