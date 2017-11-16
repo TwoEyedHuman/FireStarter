@@ -103,13 +103,23 @@ func initializeValidSpaces() [tileCount][tileCount]int {
 	}
 	//outer edge boundary
 	for i:=0; i<tileCount; i++ {
-		for j:=0; j<4; j++ {
+		for j:=0; j<2; j++ {
 			vs[j][i] = 0
 			vs[i][j] = 0
-			vs[j][tileCount-j-1] = 0
-			vs[tileCount-j-1][j] = 0
+			vs[i][tileCount-j-1] = 0
+			vs[tileCount-j-1][i] = 0
 		}
 	}
+	//house1
+	for i:=19; i<27; i++ {
+		for j:=6; j<15; j++ {
+			vs[j][i] = 0
+		}
+	}
+	vs[13][18] = 0
+	vs[14][18] = 0
+	vs[12][18] = 0
+
 	return vs
 }
 
