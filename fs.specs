@@ -1,9 +1,9 @@
 Iteration 1:
-	Display the base tile set.
-	Character movement on the grid.
+	Display the base tile set. DONE
+	Character movement on the grid. DONE, 32 x 32 grid
 
 Iteration 2:
-	Limit character movement to valid spaces.
+	Limit character movement to valid spaces. DONE.
 	Add in character item carry.
 	Add in timer to dim the screen periodically.
 

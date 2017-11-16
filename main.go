@@ -31,7 +31,10 @@ type move struct {
 
 type player struct {
 	sprite *pixel.Sprite
-	pos pixel.Vec
+	pos struct {
+		X int
+		Y int
+	}
 	gear []item
 	pack []item
 	disp pixel.Vec
@@ -82,16 +85,16 @@ func buildSpriteMoves(sm * spriteMove, spritesheet pixel.Picture) {
 }
 
 func initializePlayer(plr * player, ms * spriteMove) {
-	plr.pos.X = float64(pixelPerGrid/2 + ((tileCount-1)*pixelPerGrid))
-	plr.pos.Y = float64(pixelPerGrid/2 + ((tileCount-1)*pixelPerGrid))
+	plr.pos.X = tileCount/2//float64(pixelPerGrid/2 + ((tileCount-1)*pixelPerGrid))
+	plr.pos.Y = tileCount/2//float64(pixelPerGrid/2 + ((tileCount-1)*pixelPerGrid))
 	plr.disp.X = float64(0)
 	plr.disp.Y = float64(0)
 	plr.dispTime = 0
 	plr.sprite = ms.standDown
 }
 
-func initializeValidSpaces(vs [][]int) {
-	fmt.Println("Initializing valid spaces.")
+func initializeValidSpaces() [tileCount][tileCount]int {
+	var vs [tileCount][tileCount]int
 	//initialize all squares to valid edges
 	for i:= 0; i<tileCount; i++ {
 		for j:=0; j<tileCount; j++ {
@@ -100,60 +103,72 @@ func initializeValidSpaces(vs [][]int) {
 	}
 	//outer edge boundary
 	for i:=0; i<tileCount; i++ {
-		vs[0][i] = 0
-		vs[i][0] = 0
-		vs[0][tileCount-1] = 0
-		vs[tileCount-1][0] = 0
+		for j:=0; j<4; j++ {
+			vs[j][i] = 0
+			vs[i][j] = 0
+			vs[j][tileCount-j-1] = 0
+			vs[tileCount-j-1][j] = 0
+		}
 	}
-	fmt.Println("Finalizing valid spaces.")
+	return vs
 }
 
-//(cur.X - 8)/PPG + 1
-func dispToGrid(disp float64) int {
-	return	int((int(disp) - pixelPerGrid/2)/pixelPerGrid + 1)
-}
-
-func moveUpdate(plr * player, direction string, moveSheet * spriteMove, vs [][]int) {
+func moveUpdate(plr * player, direction string, moveSheet * spriteMove, vs [tileCount][tileCount]int) {
 	if plr.disp.Len() > 0.01 {
 		return
 	}
 	if direction == "U" {
-		if vs[dispToGrid(plr.pos.X)][dispToGrid(plr.pos.Y)+1] == 0 {
+		if plr.pos.Y+1 >= tileCount {
+			fmt.Println("Too high!")
+			return
+		} else if vs[plr.pos.X][plr.pos.Y+1] == 0 {
 			return
 		}
 		plr.disp.Y = -1 * float64(pixelPerGrid)
 		plr.disp.X = 0
 		plr.dispTime = float64(pixelPerGrid)
-		plr.pos.Y += float64(pixelPerGrid)
+		plr.pos.Y += 1
 		plr.sprite = moveSheet.walkUp
 	} else if direction == "D" {
-		if vs[dispToGrid(plr.pos.X)][dispToGrid(plr.pos.Y)+1] == 0 {
+		if plr.pos.Y-1 < 0 {
+			return
+		} else if vs[plr.pos.X][plr.pos.Y-1] == 0 {
 			return
 		}
 		plr.disp.Y = float64(pixelPerGrid)
 		plr.disp.X = 0
 		plr.dispTime = float64(pixelPerGrid)
-		plr.pos.Y -= float64(pixelPerGrid)
+		plr.pos.Y -= 1
 		plr.sprite = moveSheet.walkDown
 	} else if direction == "L" {
-		if vs[dispToGrid(plr.pos.X)][dispToGrid(plr.pos.Y)+1] == 0 {
+		if plr.pos.X-1 < 0 {
+			return
+		} else if vs[plr.pos.X-1][plr.pos.Y] == 0 {
 			return
 		}
 		plr.disp.X = float64(pixelPerGrid)
 		plr.disp.Y = 0
 		plr.dispTime = float64(pixelPerGrid)
-		plr.pos.X -= float64(pixelPerGrid)
+		plr.pos.X -= 1
 		plr.sprite = moveSheet.walkLeft
 	} else if direction == "R" {
-		if vs[dispToGrid(plr.pos.X)][dispToGrid(plr.pos.Y)+1] == 0 {
+		if plr.pos.X+1 >= tileCount {
+			return
+		} else if vs[plr.pos.X+1][plr.pos.Y] == 0 {
 			return
 		}
 		plr.disp.X = -1 * float64(pixelPerGrid)
 		plr.disp.Y = 0
 		plr.dispTime = float64(pixelPerGrid)
-		plr.pos.X += float64(pixelPerGrid)
+		plr.pos.X += 1
 		plr.sprite = moveSheet.walkRight
 	}
+}
+
+func posToVec(plr player) (v pixel.Vec) {
+	v.X = float64(pixelPerGrid * plr.pos.X)
+	v.Y = float64(pixelPerGrid * plr.pos.Y)
+	return
 }
 
 func updateDisp(plr *player, dec float64) {
@@ -205,8 +220,8 @@ func run() {
 	var plr player
 	initializePlayer(&plr, &playerMoves)
 
-	var validSpaces [][]int
-	initializeValidSpaces(validSpaces)
+	var validSpaces [tileCount][tileCount]int
+	validSpaces = initializeValidSpaces()
 
 	last := time.Now() //Initialize the time for determine time difference
 	dt := time.Since(last).Seconds()
@@ -227,14 +242,13 @@ func run() {
 		}
 
 		//Update player displacement
-		updateDisp(&plr, dt)
+		updateDisp(&plr, 16*dt)
 
 		win.Clear(colornames.Aliceblue)
 
 		//Draw everything to screen		
 		mapBase.Draw(win, pixel.IM.Moved(win.Bounds().Center()))
-		plr.sprite.Draw(win, pixel.IM.Scaled(pixel.ZV, 1).Moved(plr.pos.Add(plr.disp)))
-
+		plr.sprite.Draw(win, pixel.IM.Scaled(pixel.ZV, 1).Moved(posToVec(plr).Add(plr.disp)))
 		win.Update()
 	}
 }
