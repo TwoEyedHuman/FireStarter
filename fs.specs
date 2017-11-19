@@ -4,10 +4,16 @@ Iteration 1:
 
 Iteration 2:
 	Limit character movement to valid spaces. DONE.
-	Add in character item carry.
+	Add in character item carry. DONE
+	Add in character pickup option and add to item carry.DONE
 	Add in timer to dim the screen periodically.
+		Might not be possible suing pixel.
 
 Iteration 3:
+	Add in item display menu.DONE
+		Pressing the 1 key will toggle the menu.
+		It will only display each item once, no description or counts.
+		The items will be dispersed vertically.
 	Add in capability for character to place itemlight in a given square.
 	Have light protect that square from darkness.
 

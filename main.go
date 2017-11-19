@@ -9,6 +9,7 @@ import (
 	"golang.org/x/image/colornames"
 	"time"
 	"fmt"
+	"github.com/faiface/pixel/imdraw"
 )
 
 const tileCount int = 32
@@ -220,10 +221,33 @@ func myFieldItems() (fi []item) {
 	return
 }
 
-func itemPickup(plr * player, fi []item) (fi []item) {
-	
+func itemPickup(plr * player, fi []item) (newFi []item) {
+	for _, itm := range fi {
+		if plr.pos == itm.pos {
+			plr.pack = append(plr.pack, itm)
+		} else {
+			newFi = append(newFi, itm)
+		}
+	}
+	return
 }
-
+/*
+func displayMenu(pack []item) (imd imdraw.IMDraw) {
+	fmt.Println("Flag1")
+	imd.Color = pixel.RGB(255,255,255)
+	imd.Push(pixel.V(156, 156))
+	imd.Color = pixel.RGB(255,255,255)
+	imd.Push(pixel.V(156+200, 156))
+	fmt.Println("Flag2")
+	imd.Color = pixel.RGB(255,255,255)
+	imd.Push(pixel.V(156+200, 156+200))
+	imd.Color = pixel.RGB(255,255,255)
+	imd.Push(pixel.V(156, 156+200))
+	fmt.Println("Flag3")
+	fmt.Println("Flag4")
+	return
+}
+*/
 func run() {
 	cfg := pixelgl.WindowConfig {
 		Title: "Fire Starter",
@@ -250,18 +274,24 @@ func run() {
 	var playerMoves spriteMove
 	buildSpriteMoves(&playerMoves, playerSpritesheet)
 
+	var (
+		plr player
+		validSpaces [tileCount][tileCount]int
+		fieldItems []item
+		showMenu bool
+	)
+
 	//Initialize the player
-	var plr player
 	initializePlayer(&plr, &playerMoves)
 
-	var validSpaces [tileCount][tileCount]int
 	validSpaces = initializeValidSpaces()
 
 	last := time.Now() //Initialize the time for determine time difference
 	dt := time.Since(last).Seconds()
 
-	var fieldItems []item
 	fieldItems = myFieldItems()
+
+	showMenu = false
 
 	for !win.Closed() {
 		dt = time.Since(last).Seconds()
@@ -277,8 +307,13 @@ func run() {
 		} else if win.Pressed(pixelgl.KeyRight) {
 			moveUpdate(&plr, "R", &playerMoves, validSpaces)
 		}
-		if win.JustPressed(pixelgl.Space) {
+		if win.JustPressed(pixelgl.KeySpace) {
 			fieldItems = itemPickup(&plr, fieldItems)
+		}
+		if win.Pressed(pixelgl.Key1) {
+			showMenu = true
+		} else {
+			showMenu = false
 		}
 
 		//Update player displacement
@@ -291,6 +326,22 @@ func run() {
 		plr.sprite.Draw(win, pixel.IM.Scaled(pixel.ZV, 1).Moved(posToVec(plr.pos).Add(plr.disp)))
 		for _, fItem := range fieldItems {
 			fItem.sprite.Draw(win, pixel.IM.Scaled(pixel.ZV, 1).Moved(posToVec(fItem.pos)))
+		}
+		if showMenu {
+			imd := imdraw.New(nil)
+			imd.Color = pixel.RGB(255,255,255)
+			imd.Push(pixel.V(156, 156))
+			imd.Color = pixel.RGB(255,255,255)
+			imd.Push(pixel.V(156+200, 156))
+			imd.Color = pixel.RGB(255,255,255)
+			imd.Push(pixel.V(156+200, 156+200))
+			imd.Color = pixel.RGB(255,255,255)
+			imd.Push(pixel.V(156, 156+200))
+			imd.Polygon(0)
+			imd.Draw(win)
+			for i, pItem := range plr.pack {
+				pItem.sprite.Draw(win, pixel.IM.Scaled(pixel.ZV, 1).Moved(pixel.V(float64(tileCount*pixelPerGrid/2), float64(win.Bounds().Center().Y) + float64(i*pixelPerGrid*2))))
+			}
 		}
 		win.Update()
 	}
