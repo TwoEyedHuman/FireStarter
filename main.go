@@ -14,9 +14,14 @@ import (
 const tileCount int = 32
 const pixelPerGrid int = 16
 
+type intVec struct {
+	X int
+	Y int
+}
+
 type item struct {
 	sprite *pixel.Sprite
-	pos pixel.Vec
+	pos intVec
 }
 
 type tile struct {
@@ -31,10 +36,7 @@ type move struct {
 
 type player struct {
 	sprite *pixel.Sprite
-	pos struct {
-		X int
-		Y int
-	}
+	pos intVec
 	gear []item
 	pack []item
 	disp pixel.Vec
@@ -175,9 +177,9 @@ func moveUpdate(plr * player, direction string, moveSheet * spriteMove, vs [tile
 	}
 }
 
-func posToVec(plr player) (v pixel.Vec) {
-	v.X = float64(pixelPerGrid * plr.pos.X)
-	v.Y = float64(pixelPerGrid * plr.pos.Y)
+func posToVec(pos intVec) (v pixel.Vec) {
+	v.X = float64(pixelPerGrid * pos.X)
+	v.Y = float64(pixelPerGrid * pos.Y)
 	return
 }
 
@@ -198,6 +200,28 @@ func updateDisp(plr *player, dec float64) {
 		plr.disp = pixel.V(0.00, 0.00)
 		plr.dispTime = 0
 	}
+}
+
+func imageToSprite(filePath string) (spr *pixel.Sprite) {
+	spriteImage, err := loadPicture(filePath)
+	if err != nil {
+		panic(err)
+	}
+	spr = pixel.NewSprite(spriteImage, spriteImage.Bounds())
+	return
+}
+
+func myFieldItems() (fi []item) {
+	var tmpItem item
+	tmpItem.sprite = imageToSprite("firePotion.png")
+	tmpItem.pos.X = 6
+	tmpItem.pos.Y = 6
+	fi = append(fi, tmpItem)
+	return
+}
+
+func itemPickup(plr * player, fi []item) (fi []item) {
+	
 }
 
 func run() {
@@ -236,6 +260,9 @@ func run() {
 	last := time.Now() //Initialize the time for determine time difference
 	dt := time.Since(last).Seconds()
 
+	var fieldItems []item
+	fieldItems = myFieldItems()
+
 	for !win.Closed() {
 		dt = time.Since(last).Seconds()
 		last = time.Now()
@@ -250,6 +277,9 @@ func run() {
 		} else if win.Pressed(pixelgl.KeyRight) {
 			moveUpdate(&plr, "R", &playerMoves, validSpaces)
 		}
+		if win.JustPressed(pixelgl.Space) {
+			fieldItems = itemPickup(&plr, fieldItems)
+		}
 
 		//Update player displacement
 		updateDisp(&plr, 16*dt)
@@ -258,7 +288,10 @@ func run() {
 
 		//Draw everything to screen		
 		mapBase.Draw(win, pixel.IM.Moved(win.Bounds().Center()))
-		plr.sprite.Draw(win, pixel.IM.Scaled(pixel.ZV, 1).Moved(posToVec(plr).Add(plr.disp)))
+		plr.sprite.Draw(win, pixel.IM.Scaled(pixel.ZV, 1).Moved(posToVec(plr.pos).Add(plr.disp)))
+		for _, fItem := range fieldItems {
+			fItem.sprite.Draw(win, pixel.IM.Scaled(pixel.ZV, 1).Moved(posToVec(fItem.pos)))
+		}
 		win.Update()
 	}
 }
