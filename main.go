@@ -227,14 +227,40 @@ func imageToSprite(filePath string) (spr *pixel.Sprite) {
 
 func wolfChase(wolf * player, plr player) {
 	wolf.dispTime = float64(pixelPerGrid)
+	if wolf.pos.Y > plr.pos.Y {
+		wolf.pos.Y -= 1
+		wolf.disp.X = float64(0)
+		wolf.disp.Y = float64(pixelPerGrid)
+	} else if wolf.pos.Y == plr.pos.Y {
+		if wolf.pos.X > plr.pos.X {
+			wolf.pos.X -= 1
+			wolf.disp.X = float64(pixelPerGrid)
+			wolf.disp.Y = float64(0)
+		} else if wolf.pos.X == plr.pos.X {
+			wolf.disp.X = float64(0)
+			wolf.disp.Y = float64(0)
+		} else if wolf.pos.X < plr.pos.X {
+			wolf.pos.X += 1
+			wolf.disp.X = -1*float64(pixelPerGrid)
+			wolf.disp.Y = float64(0)
+		}
+	} else if wolf.pos.Y < plr.pos.Y {
+		wolf.pos.Y += 1
+		wolf.disp.X = float64(0)
+		wolf.disp.Y = -1*float64(pixelPerGrid)
+	}
+/*
 	if wolf.pos.X > plr.pos.X && wolf.pos.Y > plr.pos.Y {
 		wolf.pos.X -= 1
 		wolf.disp.X = float64(pixelPerGrid)
 		wolf.disp.Y = float64(0)
-	} else if wolf.pos.X <= plr.pos.X && wolf.pos.Y > plr.pos.Y {
+	} else if wolf.pos.X = plr.pos.X && wolf.pos.Y > plr.pos.Y {
 		wolf.pos.Y -= 1
 		wolf.disp.X = float64(0)
-		wolf.disp.Y = -1*float64(pixelPerGrid)
+		wolf.disp.Y = float64(pixelPerGrid)
+	} else if wolf.pos.X < plr.pos.X && wolf.pos.Y > plr.pos.Y {
+		wolf.pos.
+	
 	} else if wolf.pos.X > plr.pos.X && wolf.pos.Y <= plr.pos.Y {
 		wolf.pos.X -= 1
 		wolf.disp.X = float64(pixelPerGrid)
@@ -243,7 +269,7 @@ func wolfChase(wolf * player, plr player) {
 		wolf.pos.Y += 1
 		wolf.disp.X = float64(0)
 		wolf.disp.Y = -1*float64(pixelPerGrid)
-	}
+	}*/
 	return
 }
 
@@ -359,18 +385,14 @@ func run() {
 			showMenu = false
 		}
 
-		fmt.Printf("Enterring wolf chase with displacement %f.\n", wolf.dispTime)
 		if wolf.dispTime <  0.0001 {
-			fmt.Println("Flag1")
 			wolfChase(&wolf, plr)
-			wolf.dispTime = float64(pixelPerGrid)
+//			wolf.dispTime = float64(pixelPerGrid)
 		}
 
 		//Update player displacement
-		fmt.Printf("Position: %d, %d\ndispTime: %f\n", wolf.pos.X, wolf.pos.Y, wolf.dispTime)
-		updateDisp(&wolf, dt)
-		updateDisp(&plr, 16*dt)
-		fmt.Printf("Position: %d, %d\ndispTime: %f\n", wolf.pos.X, wolf.pos.Y, wolf.dispTime)
+		updateDisp(&wolf, 3*dt)
+		updateDisp(&plr, 4*dt)
 
 		win.Clear(colornames.Aliceblue)
 
