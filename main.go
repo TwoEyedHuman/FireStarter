@@ -105,7 +105,7 @@ func initializeWolf(wlf * player) {
 	wlf.pos.Y = 5
 	wlf.disp.X = float64(0)
 	wlf.disp.Y = float64(0)
-	wlf.dispTime = 0
+	wlf.dispTime = float64(0)
 	wlf.sprite = pixel.NewSprite(wolfPic, wolfPic.Bounds())
 }
 
@@ -225,6 +225,28 @@ func imageToSprite(filePath string) (spr *pixel.Sprite) {
 	return
 }
 
+func wolfChase(wolf * player, plr player) {
+	wolf.dispTime = float64(pixelPerGrid)
+	if wolf.pos.X > plr.pos.X && wolf.pos.Y > plr.pos.Y {
+		wolf.pos.X -= 1
+		wolf.disp.X = float64(pixelPerGrid)
+		wolf.disp.Y = float64(0)
+	} else if wolf.pos.X <= plr.pos.X && wolf.pos.Y > plr.pos.Y {
+		wolf.pos.Y -= 1
+		wolf.disp.X = float64(0)
+		wolf.disp.Y = -1*float64(pixelPerGrid)
+	} else if wolf.pos.X > plr.pos.X && wolf.pos.Y <= plr.pos.Y {
+		wolf.pos.X -= 1
+		wolf.disp.X = float64(pixelPerGrid)
+		wolf.disp.Y = float64(0)
+	} else if wolf.pos.X <= plr.pos.X && wolf.pos.Y <= plr.pos.Y {
+		wolf.pos.Y += 1
+		wolf.disp.X = float64(0)
+		wolf.disp.Y = -1*float64(pixelPerGrid)
+	}
+	return
+}
+
 func myFieldItems() (fi []item) {
 	var tmpItem item
 	tmpItem.sprite = imageToSprite("firePotion.png")
@@ -337,17 +359,18 @@ func run() {
 			showMenu = false
 		}
 
-		if wolf.dispTime == 0 {
+		fmt.Printf("Enterring wolf chase with displacement %f.\n", wolf.dispTime)
+		if wolf.dispTime <  0.0001 {
+			fmt.Println("Flag1")
+			wolfChase(&wolf, plr)
 			wolf.dispTime = float64(pixelPerGrid)
-			wolf.disp.Y = float64(pixelPerGrid)
-			wolf.disp.X = 0
-			wolf.dispTime = float64(pixelPerGrid)
-			wolf.pos.Y -= 1
 		}
 
 		//Update player displacement
+		fmt.Printf("Position: %d, %d\ndispTime: %f\n", wolf.pos.X, wolf.pos.Y, wolf.dispTime)
+		updateDisp(&wolf, dt)
 		updateDisp(&plr, 16*dt)
-		updateDisp(&wolf, 2*dt)
+		fmt.Printf("Position: %d, %d\ndispTime: %f\n", wolf.pos.X, wolf.pos.Y, wolf.dispTime)
 
 		win.Clear(colornames.Aliceblue)
 
