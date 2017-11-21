@@ -7,18 +7,18 @@ Iteration 2:
 	Add in character item carry. DONE
 	Add in character pickup option and add to item carry.DONE
 	Add in timer to dim the screen periodically.
-		Might not be possible suing pixel.
+		Might not be possible using pixel.
 
 Iteration 3:
 	Add in item display menu.DONE
 		Pressing the 1 key will toggle the menu.
 		It will only display each item once, no description or counts.
 		The items will be dispersed vertically.
-	Add in capability for character to place itemlight in a given square.
-	Have light protect that square from darkness.
 
 Iteration 4:
-	Add in dogs, and random movement on valid squares.
+	Add in dogs
+		Start with having them circle the main house.	
+	Random dog movement on valid squares.
 
 Iteration 5: 
 	Add in dogs going towards player.
@@ -26,3 +26,7 @@ Iteration 5:
 
 Iteration 6:
 	Randomized tile set.
+
+Removed Steps:
+	Add in capability for character to place itemlight in a given square.
+	Have light protect that square from darkness.

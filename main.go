@@ -9,7 +9,7 @@ import (
 	"golang.org/x/image/colornames"
 	"time"
 	"fmt"
-	"github.com/faiface/pixel/imdraw"
+//	"github.com/faiface/pixel/imdraw"
 )
 
 const tileCount int = 32
@@ -94,6 +94,19 @@ func initializePlayer(plr * player, ms * spriteMove) {
 	plr.disp.Y = float64(0)
 	plr.dispTime = 0
 	plr.sprite = ms.standDown
+}
+
+func initializeWolf(wlf * player) {
+	wolfPic, err := loadPicture("hound.png")
+	if err!= nil {
+		panic(err)
+	}
+	wlf.pos.X = 5
+	wlf.pos.Y = 5
+	wlf.disp.X = float64(0)
+	wlf.disp.Y = float64(0)
+	wlf.dispTime = 0
+	wlf.sprite = pixel.NewSprite(wolfPic, wolfPic.Bounds())
 }
 
 func initializeValidSpaces() [tileCount][tileCount]int {
@@ -218,6 +231,12 @@ func myFieldItems() (fi []item) {
 	tmpItem.pos.X = 6
 	tmpItem.pos.Y = 6
 	fi = append(fi, tmpItem)
+	tmpItem.pos.X = 9
+	tmpItem.pos.Y = 6
+	fi = append(fi, tmpItem)
+	tmpItem.pos.X = 12
+	tmpItem.pos.Y = 10
+	fi = append(fi, tmpItem)
 	return
 }
 
@@ -279,10 +298,12 @@ func run() {
 		validSpaces [tileCount][tileCount]int
 		fieldItems []item
 		showMenu bool
+		wolf player
 	)
 
 	//Initialize the player
 	initializePlayer(&plr, &playerMoves)
+	initializeWolf(&wolf)
 
 	validSpaces = initializeValidSpaces()
 
@@ -316,19 +337,30 @@ func run() {
 			showMenu = false
 		}
 
+		if wolf.dispTime == 0 {
+			wolf.dispTime = float64(pixelPerGrid)
+			wolf.disp.Y = float64(pixelPerGrid)
+			wolf.disp.X = 0
+			wolf.dispTime = float64(pixelPerGrid)
+			wolf.pos.Y -= 1
+		}
+
 		//Update player displacement
 		updateDisp(&plr, 16*dt)
+		updateDisp(&wolf, 2*dt)
 
 		win.Clear(colornames.Aliceblue)
 
 		//Draw everything to screen		
 		mapBase.Draw(win, pixel.IM.Moved(win.Bounds().Center()))
 		plr.sprite.Draw(win, pixel.IM.Scaled(pixel.ZV, 1).Moved(posToVec(plr.pos).Add(plr.disp)))
+		wolf.sprite.Draw(win, pixel.IM.Scaled(pixel.ZV, 1).Moved(posToVec(wolf.pos).Add(wolf.disp)))
+
 		for _, fItem := range fieldItems {
 			fItem.sprite.Draw(win, pixel.IM.Scaled(pixel.ZV, 1).Moved(posToVec(fItem.pos)))
 		}
 		if showMenu {
-			imd := imdraw.New(nil)
+/*			imd := imdraw.New(nil)
 			imd.Color = pixel.RGB(255,255,255)
 			imd.Push(pixel.V(156, 156))
 			imd.Color = pixel.RGB(255,255,255)
@@ -338,9 +370,9 @@ func run() {
 			imd.Color = pixel.RGB(255,255,255)
 			imd.Push(pixel.V(156, 156+200))
 			imd.Polygon(0)
-			imd.Draw(win)
+			imd.Draw(win)*/
 			for i, pItem := range plr.pack {
-				pItem.sprite.Draw(win, pixel.IM.Scaled(pixel.ZV, 1).Moved(pixel.V(float64(tileCount*pixelPerGrid/2), float64(win.Bounds().Center().Y) + float64(i*pixelPerGrid*2))))
+				pItem.sprite.Draw(win, pixel.IM.Scaled(pixel.ZV, 1).Moved(pixel.V(float64(tileCount*pixelPerGrid - 32), float64(win.Bounds().Center().Y) + float64(i*pixelPerGrid*2))))
 			}
 		}
 		win.Update()
