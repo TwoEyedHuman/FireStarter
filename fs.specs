@@ -17,12 +17,15 @@ Iteration 3:
 
 Iteration 4:
 	Add in dogs
-		Start with having them circle the main house.	
-	Random dog movement on valid squares.
+		Start with having them circle the main house. SKIP
+	Random dog movement on valid squares. SKIP
 
 Iteration 5: 
-	Add in dogs going towards player.
-	Add a lose condition and win condition.
+	Add in dogs going towards player. DONE
+	Add health (int) to items. DONE
+	Add a lose condition and win condition. DONE
+		Win: Survive for 1 minute.
+		Lose: position of dog == player position
 
 Iteration 6:
 	Randomized tile set.

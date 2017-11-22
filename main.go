@@ -9,13 +9,12 @@ import (
 	"golang.org/x/image/colornames"
 	"time"
 	"fmt"
-//	"github.com/faiface/pixel/imdraw"
 )
 
 const tileCount int = 32
 const pixelPerGrid int = 16
 
-type intVec struct {
+type intVec struct { //used to represent positions in the grid
 	X int
 	Y int
 }
@@ -23,6 +22,7 @@ type intVec struct {
 type item struct {
 	sprite *pixel.Sprite
 	pos intVec
+	health int
 }
 
 type tile struct {
@@ -249,33 +249,13 @@ func wolfChase(wolf * player, plr player) {
 		wolf.disp.X = float64(0)
 		wolf.disp.Y = -1*float64(pixelPerGrid)
 	}
-/*
-	if wolf.pos.X > plr.pos.X && wolf.pos.Y > plr.pos.Y {
-		wolf.pos.X -= 1
-		wolf.disp.X = float64(pixelPerGrid)
-		wolf.disp.Y = float64(0)
-	} else if wolf.pos.X = plr.pos.X && wolf.pos.Y > plr.pos.Y {
-		wolf.pos.Y -= 1
-		wolf.disp.X = float64(0)
-		wolf.disp.Y = float64(pixelPerGrid)
-	} else if wolf.pos.X < plr.pos.X && wolf.pos.Y > plr.pos.Y {
-		wolf.pos.
-	
-	} else if wolf.pos.X > plr.pos.X && wolf.pos.Y <= plr.pos.Y {
-		wolf.pos.X -= 1
-		wolf.disp.X = float64(pixelPerGrid)
-		wolf.disp.Y = float64(0)
-	} else if wolf.pos.X <= plr.pos.X && wolf.pos.Y <= plr.pos.Y {
-		wolf.pos.Y += 1
-		wolf.disp.X = float64(0)
-		wolf.disp.Y = -1*float64(pixelPerGrid)
-	}*/
 	return
 }
 
 func myFieldItems() (fi []item) {
 	var tmpItem item
 	tmpItem.sprite = imageToSprite("firePotion.png")
+	tmpItem.health = 1
 	tmpItem.pos.X = 6
 	tmpItem.pos.Y = 6
 	fi = append(fi, tmpItem)
@@ -298,23 +278,18 @@ func itemPickup(plr * player, fi []item) (newFi []item) {
 	}
 	return
 }
-/*
-func displayMenu(pack []item) (imd imdraw.IMDraw) {
-	fmt.Println("Flag1")
-	imd.Color = pixel.RGB(255,255,255)
-	imd.Push(pixel.V(156, 156))
-	imd.Color = pixel.RGB(255,255,255)
-	imd.Push(pixel.V(156+200, 156))
-	fmt.Println("Flag2")
-	imd.Color = pixel.RGB(255,255,255)
-	imd.Push(pixel.V(156+200, 156+200))
-	imd.Color = pixel.RGB(255,255,255)
-	imd.Push(pixel.V(156, 156+200))
-	fmt.Println("Flag3")
-	fmt.Println("Flag4")
+
+func isWinLose(plrpos intVec, houndpos intVec, runTime float64) (res bool) {
+	if plrpos.X == houndpos.X && plrpos.Y == houndpos.Y {
+		res = true
+	} else if runTime > 60 {
+		res = true
+	} else {
+		res = false
+	}
 	return
 }
-*/
+
 func run() {
 	cfg := pixelgl.WindowConfig {
 		Title: "Fire Starter",
@@ -347,6 +322,8 @@ func run() {
 		fieldItems []item
 		showMenu bool
 		wolf player
+		endCondition bool
+		startTime time.Time
 	)
 
 	//Initialize the player
@@ -361,8 +338,11 @@ func run() {
 	fieldItems = myFieldItems()
 
 	showMenu = false
+	endCondition = false
+	startTime = time.Now()
 
-	for !win.Closed() {
+	for !win.Closed() && !endCondition{
+		fmt.Printf("End Condition: %s\n", endCondition)
 		dt = time.Since(last).Seconds()
 		last = time.Now()
 
@@ -387,7 +367,7 @@ func run() {
 
 		if wolf.dispTime <  0.0001 {
 			wolfChase(&wolf, plr)
-//			wolf.dispTime = float64(pixelPerGrid)
+			endCondition = isWinLose(plr.pos, wolf.pos, time.Since(startTime).Seconds())
 		}
 
 		//Update player displacement
@@ -405,17 +385,6 @@ func run() {
 			fItem.sprite.Draw(win, pixel.IM.Scaled(pixel.ZV, 1).Moved(posToVec(fItem.pos)))
 		}
 		if showMenu {
-/*			imd := imdraw.New(nil)
-			imd.Color = pixel.RGB(255,255,255)
-			imd.Push(pixel.V(156, 156))
-			imd.Color = pixel.RGB(255,255,255)
-			imd.Push(pixel.V(156+200, 156))
-			imd.Color = pixel.RGB(255,255,255)
-			imd.Push(pixel.V(156+200, 156+200))
-			imd.Color = pixel.RGB(255,255,255)
-			imd.Push(pixel.V(156, 156+200))
-			imd.Polygon(0)
-			imd.Draw(win)*/
 			for i, pItem := range plr.pack {
 				pItem.sprite.Draw(win, pixel.IM.Scaled(pixel.ZV, 1).Moved(pixel.V(float64(tileCount*pixelPerGrid - 32), float64(win.Bounds().Center().Y) + float64(i*pixelPerGrid*2))))
 			}
