@@ -42,9 +42,10 @@ type player struct {
 	pack []item
 	disp pixel.Vec
 	dispTime float64
+	facing intVec
 }
 
-type spriteMove struct {
+type spriteFaceDirection struct {
 	standUp *pixel.Sprite
 	standDown *pixel.Sprite
 	standLeft *pixel.Sprite
@@ -72,7 +73,7 @@ func loadPicture(path string) (pixel.Picture, error) {
 	return pixel.PictureDataFromImage(img), nil
 }
 
-func buildSpriteMoves(sm * spriteMove, spritesheet pixel.Picture) {
+func buildSpriteMoves(sm * spriteFaceDirection, spritesheet pixel.Picture) {
 	sm.standUp = pixel.NewSprite(spritesheet, pixel.R(36+10, 36, 72+10, 72))
 	sm.standDown = pixel.NewSprite(spritesheet, pixel.R(36+10, 108, 72+10, 144))
 	sm.standLeft = pixel.NewSprite(spritesheet, pixel.R(36+10, 0, 72+10, 36))
@@ -87,7 +88,7 @@ func buildSpriteMoves(sm * spriteMove, spritesheet pixel.Picture) {
 	sm.walkRightAlt = pixel.NewSprite(spritesheet, pixel.R(72+20, 72, 108+20, 108))
 }
 
-func initializePlayer(plr * player, ms * spriteMove) {
+func initializePlayer(plr * player, ms * spriteFaceDirection) {
 	plr.pos.X = tileCount/2//float64(pixelPerGrid/2 + ((tileCount-1)*pixelPerGrid))
 	plr.pos.Y = tileCount/2//float64(pixelPerGrid/2 + ((tileCount-1)*pixelPerGrid))
 	plr.disp.X = float64(0)
@@ -101,8 +102,7 @@ func initializeWolf(wlf * player) {
 	if err!= nil {
 		panic(err)
 	}
-	wlf.pos.X = 5
-	wlf.pos.Y = 5
+	wlf.pos = intVec{5, 5}
 	wlf.disp.X = float64(0)
 	wlf.disp.Y = float64(0)
 	wlf.dispTime = float64(0)
@@ -132,6 +132,12 @@ func initializeValidSpaces() [tileCount][tileCount]int {
 			vs[j][i] = 0
 		}
 	}
+	//house2
+	for i:=8; i<16; i++ {
+		for j:=20; j<29; j++ {
+			vs[j][i] = 0
+		}
+	}
 	vs[13][18] = 0
 	vs[14][18] = 0
 	vs[12][18] = 0
@@ -139,7 +145,7 @@ func initializeValidSpaces() [tileCount][tileCount]int {
 	return vs
 }
 
-func moveUpdate(plr * player, direction string, moveSheet * spriteMove, vs [tileCount][tileCount]int) {
+func moveUpdate(plr * player, direction string, moveSheet * spriteFaceDirection, vs [tileCount][tileCount]int) {
 	if plr.disp.Len() > 0.01 {
 		return
 	}
@@ -225,50 +231,29 @@ func imageToSprite(filePath string) (spr *pixel.Sprite) {
 	return
 }
 
-func wolfChase(wolf * player, plr player, fi []item) {
-	wolf.dispTime = float64(pixelPerGrid)
-	if wolf.pos.Y > plr.pos.Y {
-		for _, itm := range fi {
-			if wolf.pos.Y-1 == itm.pos.Y && wolf.pos.X == itm.pos.X {
-				return
-			}
-		}	
-		wolf.pos.Y -= 1
-		wolf.disp.X = float64(0)
-		wolf.disp.Y = float64(pixelPerGrid)
-	} else if wolf.pos.Y == plr.pos.Y {
-		if wolf.pos.X > plr.pos.X {
-			for _, itm := range fi {
-				if wolf.pos.Y == itm.pos.Y && wolf.pos.X-1 == itm.pos.X {
-					return
-				}
-			}
-			wolf.pos.X -= 1
-			wolf.disp.X = float64(pixelPerGrid)
-			wolf.disp.Y = float64(0)
-		} else if wolf.pos.X == plr.pos.X {
-			wolf.disp.X = float64(0)
-			wolf.disp.Y = float64(0)
-		} else if wolf.pos.X < plr.pos.X {
-			for _, itm := range fi {
-				if wolf.pos.Y == itm.pos.Y && wolf.pos.X+1 == itm.pos.X {
-					return
-				}
-			}
-			wolf.pos.X += 1
-			wolf.disp.X = -1*float64(pixelPerGrid)
-			wolf.disp.Y = float64(0)
+func wolfChase(wolf * player, plr player, fi []item, vs [tileCount][tileCount]int) {
+	newDir := preferMoveDirection(wolf.pos, plr.pos)
+	newLoc := addIntVec(wolf.pos, newDir)
+
+	fmt.Println("(x,y): %f, %f\n", newLoc.X, newLoc.Y)
+
+	for _, itm := range fi {
+		if newLoc.X == itm.pos.X && newLoc.Y == itm.pos.Y {
+			fmt.Printf("Item Location: %i, %i\n", itm.pos.X, itm.pos.Y)
+			fmt.Println("Move is to an item space.")
+			return
 		}
-	} else if wolf.pos.Y < plr.pos.Y {
-		for _, itm := range fi {
-			if wolf.pos.Y+1 == itm.pos.Y && wolf.pos.X == itm.pos.X {
-				return
-			}
-		}
-		wolf.pos.Y += 1
-		wolf.disp.X = float64(0)
-		wolf.disp.Y = -1*float64(pixelPerGrid)
 	}
+	if vs[newLoc.X][newLoc.Y] == 0 {
+		fmt.Println("Move is to an invalid space.")
+		return
+	}
+
+	wolf.pos = newLoc
+	wolf.disp.X = float64(-1*pixelPerGrid*newDir.X)
+	wolf.disp.Y = float64(-1*pixelPerGrid*newDir.Y)
+	wolf.dispTime = float64(pixelPerGrid)
+	wolf.facing = newDir
 	return
 }
 
@@ -285,6 +270,47 @@ func myFieldItems() (fi []item) {
 	tmpItem.pos.X = 12
 	tmpItem.pos.Y = 10
 	fi = append(fi, tmpItem)
+	return
+}
+
+func addIntVec(v1 intVec, v2 intVec) (v3 intVec) {
+	v3.X = v1.X + v2.X
+	v3.Y = v1.Y + v2.Y
+	return
+}
+
+func multIntVec(v1 intVec, sclr int) (v2 intVec) {
+	v2.X = sclr * v1.X
+	v2.Y = sclr * v1.Y
+	return
+}
+
+func preferMoveDirection(from intVec, to intVec) (v3 intVec) {
+	diffX := from.X - to.X
+	diffY := from.Y - to.Y
+	if diffX <= diffY {
+		if from.Y > to.Y {
+			v3 = intVec{0, -1}
+		} else if from.Y < to.Y {
+			v3 = intVec{0, 1}
+		} else {
+			if from.X > to.X {
+				v3 = intVec{-1,0}
+			} else if from.X < to.X {
+				v3 = intVec{1,0}
+			} else {
+				v3 = intVec{0,0}
+			}
+		}
+	} else if diffX > diffY {
+		if from.X > to.X {
+			v3 = intVec{-1,0}
+		} else if from.X < to.X {
+			v3 = intVec{1,0}
+		} else {
+			v3 = intVec{0,0}
+		}
+	}
 	return
 }
 
@@ -341,7 +367,7 @@ func run() {
 	if err!= nil {
 		panic(err)
 	}
-	var playerMoves spriteMove
+	var playerMoves spriteFaceDirection
 	buildSpriteMoves(&playerMoves, playerSpritesheet)
 
 	var (
@@ -352,6 +378,7 @@ func run() {
 		wolf player
 		endCondition bool
 		startTime time.Time
+//		attackTimer float64
 	)
 
 	//Initialize the player
@@ -368,10 +395,11 @@ func run() {
 	showMenu = false
 	endCondition = false
 	startTime = time.Now()
+//	attackTimer = float64(0)
 
 	for !win.Closed() && !endCondition{
-		fmt.Printf("End Condition: %s\n", endCondition)
 		dt = time.Since(last).Seconds()
+//		attackTimer += dt
 		last = time.Now()
 
 		//Check for user input and react
@@ -394,12 +422,14 @@ func run() {
 		}
 
 		if wolf.dispTime <  0.0001 {
-			wolfChase(&wolf, plr, fieldItems)
+			wolfChase(&wolf, plr, fieldItems, validSpaces)
 			endCondition = isWinLose(plr.pos, wolf.pos, time.Since(startTime).Seconds())
 		}
 
 		//Update player displacement
+		fmt.Printf("dispTime: %f, ", wolf.dispTime)
 		updateDisp(&wolf, 3*dt)
+		fmt.Println(wolf.dispTime)
 		updateDisp(&plr, 4*dt)
 
 		win.Clear(colornames.Aliceblue)

@@ -26,6 +26,8 @@ Iteration 5:
 	Add a lose condition and win condition. DONE
 		Win: Survive for 1 minute.
 		Lose: position of dog == player position
+	Have field items lose health for every second that a hound is facing it.
+		Every loop, increase an attack timer. Once it hits 1second, decrease the health of the item it is facing by one.
 
 Iteration 6:
 	Randomized tile set.
