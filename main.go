@@ -8,7 +8,6 @@ import (
 	"github.com/faiface/pixel/pixelgl"
 	"golang.org/x/image/colornames"
 	"time"
-	"fmt"
 )
 
 const tileCount int = 32
@@ -19,22 +18,22 @@ type intVec struct { //used to represent positions in the grid
 	Y int
 }
 
-type item struct {
+type item struct { //structure that is an item (held or field)
 	sprite *pixel.Sprite
 	pos intVec
 	health int
 }
 
-type tile struct {
+type tile struct { //game board squares
 	sprite *pixel.Sprite
 	isAccessible bool
 }
-
+/*
 type move struct {
 	direction string
 	pixelLeft int
 }
-
+*/
 type player struct {
 	sprite *pixel.Sprite
 	pos intVec
@@ -145,54 +144,27 @@ func initializeValidSpaces() [tileCount][tileCount]int {
 	return vs
 }
 
-func moveUpdate(plr * player, direction string, moveSheet * spriteFaceDirection, vs [tileCount][tileCount]int) {
+func moveUpdate(plr * player, newDir intVec, moveSheet * spriteFaceDirection, vs [tileCount][tileCount]int) {
 	if plr.disp.Len() > 0.01 {
 		return
 	}
-	if direction == "U" {
-		if plr.pos.Y+1 >= tileCount {
-			fmt.Println("Too high!")
-			return
-		} else if vs[plr.pos.X][plr.pos.Y+1] == 0 {
-			return
-		}
-		plr.disp.Y = -1 * float64(pixelPerGrid)
-		plr.disp.X = 0
-		plr.dispTime = float64(pixelPerGrid)
-		plr.pos.Y += 1
+	newLoc := addIntVec(plr.pos, newDir)
+	if newLoc.X >= tileCount || newLoc.Y >= tileCount {
+		return
+	} else if vs[newLoc.X][newLoc.Y] == 0 {
+		return
+	}
+	plr.pos = addIntVec(plr.pos, newDir)
+	plr.disp.X = float64(-1*pixelPerGrid*newDir.X)
+	plr.disp.Y = float64(-1*pixelPerGrid*newDir.Y)
+	plr.dispTime = float64(pixelPerGrid)
+	if newDir.X == 0 && newDir.Y == 1 {
 		plr.sprite = moveSheet.walkUp
-	} else if direction == "D" {
-		if plr.pos.Y-1 < 0 {
-			return
-		} else if vs[plr.pos.X][plr.pos.Y-1] == 0 {
-			return
-		}
-		plr.disp.Y = float64(pixelPerGrid)
-		plr.disp.X = 0
-		plr.dispTime = float64(pixelPerGrid)
-		plr.pos.Y -= 1
+	} else if newDir.X == 0 && newDir.Y == -1 {
 		plr.sprite = moveSheet.walkDown
-	} else if direction == "L" {
-		if plr.pos.X-1 < 0 {
-			return
-		} else if vs[plr.pos.X-1][plr.pos.Y] == 0 {
-			return
-		}
-		plr.disp.X = float64(pixelPerGrid)
-		plr.disp.Y = 0
-		plr.dispTime = float64(pixelPerGrid)
-		plr.pos.X -= 1
+	} else if newDir.X == -1 && newDir.Y == 0 {
 		plr.sprite = moveSheet.walkLeft
-	} else if direction == "R" {
-		if plr.pos.X+1 >= tileCount {
-			return
-		} else if vs[plr.pos.X+1][plr.pos.Y] == 0 {
-			return
-		}
-		plr.disp.X = -1 * float64(pixelPerGrid)
-		plr.disp.Y = 0
-		plr.dispTime = float64(pixelPerGrid)
-		plr.pos.X += 1
+	} else if newDir.X == 1 && newDir.Y == 0 {
 		plr.sprite = moveSheet.walkRight
 	}
 }
@@ -235,17 +207,13 @@ func wolfChase(wolf * player, plr player, fi []item, vs [tileCount][tileCount]in
 	newDir := preferMoveDirection(wolf.pos, plr.pos)
 	newLoc := addIntVec(wolf.pos, newDir)
 
-	fmt.Println("(x,y): %f, %f\n", newLoc.X, newLoc.Y)
 
 	for _, itm := range fi {
 		if newLoc.X == itm.pos.X && newLoc.Y == itm.pos.Y {
-			fmt.Printf("Item Location: %i, %i\n", itm.pos.X, itm.pos.Y)
-			fmt.Println("Move is to an item space.")
 			return
 		}
 	}
 	if vs[newLoc.X][newLoc.Y] == 0 {
-		fmt.Println("Move is to an invalid space.")
 		return
 	}
 
@@ -260,7 +228,7 @@ func wolfChase(wolf * player, plr player, fi []item, vs [tileCount][tileCount]in
 func myFieldItems() (fi []item) {
 	var tmpItem item
 	tmpItem.sprite = imageToSprite("firePotion.png")
-	tmpItem.health = 1
+	tmpItem.health = 3
 	tmpItem.pos.X = 6
 	tmpItem.pos.Y = 6
 	fi = append(fi, tmpItem)
@@ -378,7 +346,7 @@ func run() {
 		wolf player
 		endCondition bool
 		startTime time.Time
-//		attackTimer float64
+		attackTimer float64
 	)
 
 	//Initialize the player
@@ -395,22 +363,22 @@ func run() {
 	showMenu = false
 	endCondition = false
 	startTime = time.Now()
-//	attackTimer = float64(0)
+	attackTimer = float64(0)
 
 	for !win.Closed() && !endCondition{
 		dt = time.Since(last).Seconds()
-//		attackTimer += dt
+		attackTimer += dt
 		last = time.Now()
 
 		//Check for user input and react
 		if win.Pressed(pixelgl.KeyUp) {
-			moveUpdate(&plr, "U", &playerMoves, validSpaces)
+			moveUpdate(&plr, intVec{0,1}, &playerMoves, validSpaces)
 		} else if win.Pressed(pixelgl.KeyDown) {
-			moveUpdate(&plr, "D", &playerMoves, validSpaces)
+			moveUpdate(&plr, intVec{0,-1}, &playerMoves, validSpaces)
 		} else if win.Pressed(pixelgl.KeyLeft) {
-			moveUpdate(&plr, "L", &playerMoves, validSpaces)
+			moveUpdate(&plr, intVec{-1,0}, &playerMoves, validSpaces)
 		} else if win.Pressed(pixelgl.KeyRight) {
-			moveUpdate(&plr, "R", &playerMoves, validSpaces)
+			moveUpdate(&plr, intVec{1,0}, &playerMoves, validSpaces)
 		}
 		if win.JustPressed(pixelgl.KeySpace) {
 			fieldItems = itemPickup(&plr, fieldItems)
@@ -425,12 +393,27 @@ func run() {
 			wolfChase(&wolf, plr, fieldItems, validSpaces)
 			endCondition = isWinLose(plr.pos, wolf.pos, time.Since(startTime).Seconds())
 		}
+		if attackTimer > 0.5 {
+			attackTimer = 0
+			var newFi []item
+			for i, itm := range fieldItems {
+				newFi = append(newFi, itm)
+				if addIntVec(wolf.pos, wolf.facing) == itm.pos {
+					newFi[i].health -= 1
+				}
+				if newFi[i].health <= 0 {
+					newFi[i] = newFi[len(newFi)-1]
+					newFi = newFi[:len(newFi)-1]
+				}
+			}
+			fieldItems = newFi
+			newFi = nil
+		}
+
 
 		//Update player displacement
-		fmt.Printf("dispTime: %f, ", wolf.dispTime)
 		updateDisp(&wolf, 3*dt)
-		fmt.Println(wolf.dispTime)
-		updateDisp(&plr, 4*dt)
+		updateDisp(&plr, 8*dt)
 
 		win.Clear(colornames.Aliceblue)
 
