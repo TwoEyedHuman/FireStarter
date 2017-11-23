@@ -225,14 +225,24 @@ func imageToSprite(filePath string) (spr *pixel.Sprite) {
 	return
 }
 
-func wolfChase(wolf * player, plr player) {
+func wolfChase(wolf * player, plr player, fi []item) {
 	wolf.dispTime = float64(pixelPerGrid)
 	if wolf.pos.Y > plr.pos.Y {
+		for _, itm := range fi {
+			if wolf.pos.Y-1 == itm.pos.Y && wolf.pos.X == itm.pos.X {
+				return
+			}
+		}	
 		wolf.pos.Y -= 1
 		wolf.disp.X = float64(0)
 		wolf.disp.Y = float64(pixelPerGrid)
 	} else if wolf.pos.Y == plr.pos.Y {
 		if wolf.pos.X > plr.pos.X {
+			for _, itm := range fi {
+				if wolf.pos.Y == itm.pos.Y && wolf.pos.X-1 == itm.pos.X {
+					return
+				}
+			}
 			wolf.pos.X -= 1
 			wolf.disp.X = float64(pixelPerGrid)
 			wolf.disp.Y = float64(0)
@@ -240,11 +250,21 @@ func wolfChase(wolf * player, plr player) {
 			wolf.disp.X = float64(0)
 			wolf.disp.Y = float64(0)
 		} else if wolf.pos.X < plr.pos.X {
+			for _, itm := range fi {
+				if wolf.pos.Y == itm.pos.Y && wolf.pos.X+1 == itm.pos.X {
+					return
+				}
+			}
 			wolf.pos.X += 1
 			wolf.disp.X = -1*float64(pixelPerGrid)
 			wolf.disp.Y = float64(0)
 		}
 	} else if wolf.pos.Y < plr.pos.Y {
+		for _, itm := range fi {
+			if wolf.pos.Y+1 == itm.pos.Y && wolf.pos.X == itm.pos.X {
+				return
+			}
+		}
 		wolf.pos.Y += 1
 		wolf.disp.X = float64(0)
 		wolf.disp.Y = -1*float64(pixelPerGrid)
@@ -374,7 +394,7 @@ func run() {
 		}
 
 		if wolf.dispTime <  0.0001 {
-			wolfChase(&wolf, plr)
+			wolfChase(&wolf, plr, fieldItems)
 			endCondition = isWinLose(plr.pos, wolf.pos, time.Since(startTime).Seconds())
 		}
 
