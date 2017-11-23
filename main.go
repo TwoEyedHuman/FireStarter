@@ -269,12 +269,20 @@ func myFieldItems() (fi []item) {
 }
 
 func itemPickup(plr * player, fi []item) (newFi []item) {
+	itemHasBeenPickedUp := false
 	for _, itm := range fi {
 		if plr.pos == itm.pos {
 			plr.pack = append(plr.pack, itm)
+			itemHasBeenPickedUp = true
 		} else {
 			newFi = append(newFi, itm)
 		}
+	}
+	if !itemHasBeenPickedUp && len(plr.pack) > 0 {
+		plr.pack[0].pos.X = plr.pos.X
+		plr.pack[0].pos.Y = plr.pos.Y
+		newFi = append(newFi, plr.pack[0])
+		plr.pack = plr.pack[1:]
 	}
 	return
 }
