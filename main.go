@@ -8,6 +8,8 @@ import (
 	"github.com/faiface/pixel/pixelgl"
 	"golang.org/x/image/colornames"
 	"time"
+	"fmt"
+	"math"
 )
 
 const tileCount int = 32
@@ -207,6 +209,7 @@ func wolfChase(wolf * player, plr player, fi []item, vs [tileCount][tileCount]in
 	newDir := preferMoveDirection(wolf.pos, plr.pos)
 	newLoc := addIntVec(wolf.pos, newDir)
 
+	fmt.Printf("newDir: (%d, %d)\n", newDir.X, newDir.Y)
 
 	for _, itm := range fi {
 		if newLoc.X == itm.pos.X && newLoc.Y == itm.pos.Y {
@@ -254,8 +257,10 @@ func multIntVec(v1 intVec, sclr int) (v2 intVec) {
 }
 
 func preferMoveDirection(from intVec, to intVec) (v3 intVec) {
-	diffX := from.X - to.X
-	diffY := from.Y - to.Y
+	diffX := int(math.Abs(float64(from.X - to.X)))
+	diffY := int(math.Abs(float64(from.Y - to.Y)))
+	fmt.Printf("diffX, diffY: %d, %d\n", diffX, diffY)
+	fmt.Printf("(%d, %d) to (%d, %d)\n", from.X, from.Y, to.X, to.Y)
 	if diffX <= diffY {
 		if from.Y > to.Y {
 			v3 = intVec{0, -1}

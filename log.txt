@@ -1,0 +1,1656 @@
+diffX, diffY: 11, 11
+(5, 5) to (16, 16)
+newDir: (0, 1)
+diffX, diffY: 11, 10
+(5, 6) to (16, 16)
+newDir: (1, 0)
+diffX, diffY: 11, 10
+(5, 6) to (16, 16)
+newDir: (1, 0)
+diffX, diffY: 11, 10
+(5, 6) to (16, 16)
+newDir: (1, 0)
+diffX, diffY: 11, 10
+(5, 6) to (16, 16)
+newDir: (1, 0)
+diffX, diffY: 11, 10
+(5, 6) to (16, 16)
+newDir: (1, 0)
+diffX, diffY: 11, 10
+(5, 6) to (16, 16)
+newDir: (1, 0)
+diffX, diffY: 11, 10
+(5, 6) to (16, 16)
+newDir: (1, 0)
+diffX, diffY: 11, 10
+(5, 6) to (16, 16)
+newDir: (1, 0)
+diffX, diffY: 11, 10
+(5, 6) to (16, 16)
+newDir: (1, 0)
+diffX, diffY: 11, 10
+(5, 6) to (16, 16)
+newDir: (1, 0)
+diffX, diffY: 11, 10
+(5, 6) to (16, 16)
+newDir: (1, 0)
+diffX, diffY: 11, 10
+(5, 6) to (16, 16)
+newDir: (1, 0)
+diffX, diffY: 11, 10
+(5, 6) to (16, 16)
+newDir: (1, 0)
+diffX, diffY: 11, 10
+(5, 6) to (16, 16)
+newDir: (1, 0)
+diffX, diffY: 11, 10
+(5, 6) to (16, 16)
+newDir: (1, 0)
+diffX, diffY: 11, 10
+(5, 6) to (16, 16)
+newDir: (1, 0)
+diffX, diffY: 11, 10
+(5, 6) to (16, 16)
+newDir: (1, 0)
+diffX, diffY: 11, 10
+(5, 6) to (16, 16)
+newDir: (1, 0)
+diffX, diffY: 11, 10
+(5, 6) to (16, 16)
+newDir: (1, 0)
+diffX, diffY: 11, 10
+(5, 6) to (16, 16)
+newDir: (1, 0)
+diffX, diffY: 11, 10
+(5, 6) to (16, 16)
+newDir: (1, 0)
+diffX, diffY: 11, 10
+(5, 6) to (16, 16)
+newDir: (1, 0)
+diffX, diffY: 11, 10
+(5, 6) to (16, 16)
+newDir: (1, 0)
+diffX, diffY: 11, 10
+(5, 6) to (16, 16)
+newDir: (1, 0)
+diffX, diffY: 11, 10
+(5, 6) to (16, 16)
+newDir: (1, 0)
+diffX, diffY: 11, 10
+(5, 6) to (16, 16)
+newDir: (1, 0)
+diffX, diffY: 11, 10
+(5, 6) to (16, 16)
+newDir: (1, 0)
+diffX, diffY: 11, 10
+(5, 6) to (16, 16)
+newDir: (1, 0)
+diffX, diffY: 11, 10
+(5, 6) to (16, 16)
+newDir: (1, 0)
+diffX, diffY: 11, 10
+(5, 6) to (16, 16)
+newDir: (1, 0)
+diffX, diffY: 11, 10
+(5, 6) to (16, 16)
+newDir: (1, 0)
+diffX, diffY: 11, 10
+(5, 6) to (16, 16)
+newDir: (1, 0)
+diffX, diffY: 11, 10
+(5, 6) to (16, 16)
+newDir: (1, 0)
+diffX, diffY: 11, 10
+(5, 6) to (16, 16)
+newDir: (1, 0)
+diffX, diffY: 11, 10
+(5, 6) to (16, 16)
+newDir: (1, 0)
+diffX, diffY: 11, 10
+(5, 6) to (16, 16)
+newDir: (1, 0)
+diffX, diffY: 11, 10
+(5, 6) to (16, 16)
+newDir: (1, 0)
+diffX, diffY: 11, 10
+(5, 6) to (16, 16)
+newDir: (1, 0)
+diffX, diffY: 11, 10
+(5, 6) to (16, 16)
+newDir: (1, 0)
+diffX, diffY: 11, 10
+(5, 6) to (16, 16)
+newDir: (1, 0)
+diffX, diffY: 11, 10
+(5, 6) to (16, 16)
+newDir: (1, 0)
+diffX, diffY: 11, 10
+(5, 6) to (16, 16)
+newDir: (1, 0)
+diffX, diffY: 11, 10
+(5, 6) to (16, 16)
+newDir: (1, 0)
+diffX, diffY: 11, 10
+(5, 6) to (16, 16)
+newDir: (1, 0)
+diffX, diffY: 11, 10
+(5, 6) to (16, 16)
+newDir: (1, 0)
+diffX, diffY: 11, 10
+(5, 6) to (16, 16)
+newDir: (1, 0)
+diffX, diffY: 11, 10
+(5, 6) to (16, 16)
+newDir: (1, 0)
+diffX, diffY: 11, 10
+(5, 6) to (16, 16)
+newDir: (1, 0)
+diffX, diffY: 11, 10
+(5, 6) to (16, 16)
+newDir: (1, 0)
+diffX, diffY: 11, 10
+(5, 6) to (16, 16)
+newDir: (1, 0)
+diffX, diffY: 11, 10
+(5, 6) to (16, 16)
+newDir: (1, 0)
+diffX, diffY: 11, 10
+(5, 6) to (16, 16)
+newDir: (1, 0)
+diffX, diffY: 11, 10
+(5, 6) to (16, 16)
+newDir: (1, 0)
+diffX, diffY: 11, 10
+(5, 6) to (16, 16)
+newDir: (1, 0)
+diffX, diffY: 11, 10
+(5, 6) to (16, 16)
+newDir: (1, 0)
+diffX, diffY: 11, 10
+(5, 6) to (16, 16)
+newDir: (1, 0)
+diffX, diffY: 11, 10
+(5, 6) to (16, 16)
+newDir: (1, 0)
+diffX, diffY: 11, 10
+(5, 6) to (16, 16)
+newDir: (1, 0)
+diffX, diffY: 11, 10
+(5, 6) to (16, 16)
+newDir: (1, 0)
+diffX, diffY: 11, 10
+(5, 6) to (16, 16)
+newDir: (1, 0)
+diffX, diffY: 11, 10
+(5, 6) to (16, 16)
+newDir: (1, 0)
+diffX, diffY: 11, 10
+(5, 6) to (16, 16)
+newDir: (1, 0)
+diffX, diffY: 11, 10
+(5, 6) to (16, 16)
+newDir: (1, 0)
+diffX, diffY: 11, 10
+(5, 6) to (16, 16)
+newDir: (1, 0)
+diffX, diffY: 11, 10
+(5, 6) to (16, 16)
+newDir: (1, 0)
+diffX, diffY: 11, 10
+(5, 6) to (16, 16)
+newDir: (1, 0)
+diffX, diffY: 11, 10
+(5, 6) to (16, 16)
+newDir: (1, 0)
+diffX, diffY: 11, 10
+(5, 6) to (16, 16)
+newDir: (1, 0)
+diffX, diffY: 11, 10
+(5, 6) to (16, 16)
+newDir: (1, 0)
+diffX, diffY: 11, 10
+(5, 6) to (16, 16)
+newDir: (1, 0)
+diffX, diffY: 11, 10
+(5, 6) to (16, 16)
+newDir: (1, 0)
+diffX, diffY: 11, 10
+(5, 6) to (16, 16)
+newDir: (1, 0)
+diffX, diffY: 11, 10
+(5, 6) to (16, 16)
+newDir: (1, 0)
+diffX, diffY: 11, 10
+(5, 6) to (16, 16)
+newDir: (1, 0)
+diffX, diffY: 11, 10
+(5, 6) to (16, 16)
+newDir: (1, 0)
+diffX, diffY: 11, 10
+(5, 6) to (16, 16)
+newDir: (1, 0)
+diffX, diffY: 11, 10
+(5, 6) to (16, 16)
+newDir: (1, 0)
+diffX, diffY: 11, 10
+(5, 6) to (16, 16)
+newDir: (1, 0)
+diffX, diffY: 11, 10
+(5, 6) to (16, 16)
+newDir: (1, 0)
+diffX, diffY: 11, 10
+(5, 6) to (16, 16)
+newDir: (1, 0)
+diffX, diffY: 11, 10
+(5, 6) to (16, 16)
+newDir: (1, 0)
+diffX, diffY: 11, 10
+(5, 6) to (16, 16)
+newDir: (1, 0)
+diffX, diffY: 11, 10
+(5, 6) to (16, 16)
+newDir: (1, 0)
+diffX, diffY: 11, 10
+(5, 6) to (16, 16)
+newDir: (1, 0)
+diffX, diffY: 10, 10
+(5, 6) to (15, 16)
+newDir: (0, 1)
+diffX, diffY: 8, 9
+(5, 7) to (13, 16)
+newDir: (0, 1)
+diffX, diffY: 8, 8
+(5, 8) to (13, 16)
+newDir: (0, 1)
+diffX, diffY: 8, 7
+(5, 9) to (13, 16)
+newDir: (1, 0)
+diffX, diffY: 7, 7
+(6, 9) to (13, 16)
+newDir: (0, 1)
+diffX, diffY: 7, 6
+(6, 10) to (13, 16)
+newDir: (1, 0)
+diffX, diffY: 6, 6
+(7, 10) to (13, 16)
+newDir: (0, 1)
+diffX, diffY: 6, 5
+(7, 11) to (13, 16)
+newDir: (1, 0)
+diffX, diffY: 5, 5
+(8, 11) to (13, 16)
+newDir: (0, 1)
+diffX, diffY: 5, 4
+(8, 12) to (13, 16)
+newDir: (1, 0)
+diffX, diffY: 4, 4
+(9, 12) to (13, 16)
+newDir: (0, 1)
+diffX, diffY: 4, 3
+(9, 13) to (13, 16)
+newDir: (1, 0)
+diffX, diffY: 3, 3
+(10, 13) to (13, 16)
+newDir: (0, 1)
+diffX, diffY: 3, 2
+(10, 14) to (13, 16)
+newDir: (1, 0)
+diffX, diffY: 3, 2
+(11, 14) to (14, 16)
+newDir: (1, 0)
+diffX, diffY: 5, 2
+(12, 14) to (17, 16)
+newDir: (1, 0)
+diffX, diffY: 4, 0
+(13, 14) to (17, 14)
+newDir: (1, 0)
+diffX, diffY: 3, 2
+(14, 14) to (17, 12)
+newDir: (1, 0)
+diffX, diffY: 2, 4
+(15, 14) to (17, 10)
+newDir: (0, -1)
+diffX, diffY: 0, 4
+(15, 13) to (15, 9)
+newDir: (0, -1)
+diffX, diffY: 2, 3
+(15, 12) to (13, 9)
+newDir: (0, -1)
+diffX, diffY: 3, 2
+(15, 11) to (12, 9)
+newDir: (-1, 0)
+diffX, diffY: 2, 1
+(14, 11) to (12, 10)
+newDir: (-1, 0)
+diffX, diffY: 2, 0
+(13, 11) to (11, 11)
+newDir: (-1, 0)
+diffX, diffY: 4, 0
+(12, 11) to (8, 11)
+newDir: (-1, 0)
+diffX, diffY: 5, 0
+(11, 11) to (6, 11)
+newDir: (-1, 0)
+diffX, diffY: 4, 2
+(10, 11) to (6, 9)
+newDir: (-1, 0)
+diffX, diffY: 3, 4
+(9, 11) to (6, 7)
+newDir: (0, -1)
+diffX, diffY: 3, 4
+(9, 10) to (6, 6)
+newDir: (0, -1)
+diffX, diffY: 2, 3
+(9, 9) to (7, 6)
+newDir: (0, -1)
+diffX, diffY: 1, 2
+(9, 8) to (8, 6)
+newDir: (0, -1)
+diffX, diffY: 3, 1
+(9, 7) to (6, 6)
+newDir: (-1, 0)
+diffX, diffY: 4, 1
+(8, 7) to (4, 6)
+newDir: (-1, 0)
+diffX, diffY: 5, 0
+(7, 7) to (2, 7)
+newDir: (-1, 0)
+diffX, diffY: 4, 2
+(6, 7) to (2, 9)
+newDir: (-1, 0)
+diffX, diffY: 3, 4
+(5, 7) to (2, 11)
+newDir: (0, 1)
+diffX, diffY: 1, 3
+(5, 8) to (4, 11)
+newDir: (0, 1)
+diffX, diffY: 2, 2
+(5, 9) to (7, 11)
+newDir: (0, 1)
+diffX, diffY: 4, 1
+(5, 10) to (9, 11)
+newDir: (1, 0)
+diffX, diffY: 5, 1
+(6, 10) to (11, 11)
+newDir: (1, 0)
+diffX, diffY: 5, 0
+(7, 10) to (12, 10)
+newDir: (1, 0)
+diffX, diffY: 4, 0
+(8, 10) to (12, 10)
+newDir: (1, 0)
+diffX, diffY: 3, 2
+(9, 10) to (12, 8)
+newDir: (1, 0)
+diffX, diffY: 2, 4
+(10, 10) to (12, 6)
+newDir: (0, -1)
+diffX, diffY: 0, 3
+(10, 9) to (10, 6)
+newDir: (0, -1)
+diffX, diffY: 2, 2
+(10, 8) to (8, 6)
+newDir: (0, -1)
+diffX, diffY: 4, 1
+(10, 7) to (6, 6)
+newDir: (-1, 0)
+diffX, diffY: 1, 1
+(9, 7) to (8, 6)
+newDir: (0, -1)
+diffX, diffY: 1, 0
+(9, 6) to (8, 6)
+newDir: (-1, 0)
+diffX, diffY: 1, 0
+(9, 6) to (8, 6)
+newDir: (-1, 0)
+diffX, diffY: 1, 0
+(9, 6) to (8, 6)
+newDir: (-1, 0)
+diffX, diffY: 1, 0
+(9, 6) to (8, 6)
+newDir: (-1, 0)
+diffX, diffY: 1, 0
+(9, 6) to (8, 6)
+newDir: (-1, 0)
+diffX, diffY: 1, 0
+(9, 6) to (8, 6)
+newDir: (-1, 0)
+diffX, diffY: 1, 0
+(9, 6) to (8, 6)
+newDir: (-1, 0)
+diffX, diffY: 1, 0
+(9, 6) to (8, 6)
+newDir: (-1, 0)
+diffX, diffY: 2, 0
+(9, 6) to (7, 6)
+newDir: (-1, 0)
+diffX, diffY: 2, 0
+(9, 6) to (7, 6)
+newDir: (-1, 0)
+diffX, diffY: 2, 0
+(9, 6) to (7, 6)
+newDir: (-1, 0)
+diffX, diffY: 2, 0
+(9, 6) to (7, 6)
+newDir: (-1, 0)
+diffX, diffY: 2, 0
+(9, 6) to (7, 6)
+newDir: (-1, 0)
+diffX, diffY: 2, 0
+(9, 6) to (7, 6)
+newDir: (-1, 0)
+diffX, diffY: 2, 0
+(9, 6) to (7, 6)
+newDir: (-1, 0)
+diffX, diffY: 2, 0
+(9, 6) to (7, 6)
+newDir: (-1, 0)
+diffX, diffY: 2, 0
+(9, 6) to (7, 6)
+newDir: (-1, 0)
+diffX, diffY: 3, 0
+(9, 6) to (6, 6)
+newDir: (-1, 0)
+diffX, diffY: 3, 0
+(9, 6) to (6, 6)
+newDir: (-1, 0)
+diffX, diffY: 3, 0
+(9, 6) to (6, 6)
+newDir: (-1, 0)
+diffX, diffY: 3, 0
+(9, 6) to (6, 6)
+newDir: (-1, 0)
+diffX, diffY: 3, 0
+(9, 6) to (6, 6)
+newDir: (-1, 0)
+diffX, diffY: 3, 0
+(9, 6) to (6, 6)
+newDir: (-1, 0)
+diffX, diffY: 3, 0
+(9, 6) to (6, 6)
+newDir: (-1, 0)
+diffX, diffY: 3, 0
+(9, 6) to (6, 6)
+newDir: (-1, 0)
+diffX, diffY: 3, 0
+(9, 6) to (6, 6)
+newDir: (-1, 0)
+diffX, diffY: 4, 0
+(9, 6) to (5, 6)
+newDir: (-1, 0)
+diffX, diffY: 4, 0
+(9, 6) to (5, 6)
+newDir: (-1, 0)
+diffX, diffY: 4, 0
+(9, 6) to (5, 6)
+newDir: (-1, 0)
+diffX, diffY: 4, 0
+(9, 6) to (5, 6)
+newDir: (-1, 0)
+diffX, diffY: 4, 0
+(9, 6) to (5, 6)
+newDir: (-1, 0)
+diffX, diffY: 4, 0
+(9, 6) to (5, 6)
+newDir: (-1, 0)
+diffX, diffY: 4, 0
+(9, 6) to (5, 6)
+newDir: (-1, 0)
+diffX, diffY: 4, 0
+(9, 6) to (5, 6)
+newDir: (-1, 0)
+diffX, diffY: 4, 0
+(9, 6) to (5, 6)
+newDir: (-1, 0)
+diffX, diffY: 5, 0
+(9, 6) to (4, 6)
+newDir: (-1, 0)
+diffX, diffY: 5, 0
+(9, 6) to (4, 6)
+newDir: (-1, 0)
+diffX, diffY: 5, 0
+(9, 6) to (4, 6)
+newDir: (-1, 0)
+diffX, diffY: 5, 0
+(9, 6) to (4, 6)
+newDir: (-1, 0)
+diffX, diffY: 5, 0
+(9, 6) to (4, 6)
+newDir: (-1, 0)
+diffX, diffY: 5, 0
+(9, 6) to (4, 6)
+newDir: (-1, 0)
+diffX, diffY: 5, 0
+(9, 6) to (4, 6)
+newDir: (-1, 0)
+diffX, diffY: 5, 0
+(9, 6) to (4, 6)
+newDir: (-1, 0)
+diffX, diffY: 5, 0
+(9, 6) to (4, 6)
+newDir: (-1, 0)
+diffX, diffY: 5, 1
+(9, 6) to (4, 7)
+newDir: (-1, 0)
+diffX, diffY: 5, 1
+(9, 6) to (4, 7)
+newDir: (-1, 0)
+diffX, diffY: 5, 1
+(9, 6) to (4, 7)
+newDir: (-1, 0)
+diffX, diffY: 5, 1
+(9, 6) to (4, 7)
+newDir: (-1, 0)
+diffX, diffY: 5, 1
+(9, 6) to (4, 7)
+newDir: (-1, 0)
+diffX, diffY: 5, 1
+(9, 6) to (4, 7)
+newDir: (-1, 0)
+diffX, diffY: 5, 1
+(9, 6) to (4, 7)
+newDir: (-1, 0)
+diffX, diffY: 5, 1
+(9, 6) to (4, 7)
+newDir: (-1, 0)
+diffX, diffY: 5, 1
+(9, 6) to (4, 7)
+newDir: (-1, 0)
+diffX, diffY: 5, 2
+(9, 6) to (4, 8)
+newDir: (-1, 0)
+diffX, diffY: 5, 2
+(9, 6) to (4, 8)
+newDir: (-1, 0)
+diffX, diffY: 5, 2
+(9, 6) to (4, 8)
+newDir: (-1, 0)
+diffX, diffY: 5, 2
+(9, 6) to (4, 8)
+newDir: (-1, 0)
+diffX, diffY: 5, 2
+(9, 6) to (4, 8)
+newDir: (-1, 0)
+diffX, diffY: 5, 2
+(9, 6) to (4, 8)
+newDir: (-1, 0)
+diffX, diffY: 5, 2
+(9, 6) to (4, 8)
+newDir: (-1, 0)
+diffX, diffY: 5, 2
+(9, 6) to (4, 8)
+newDir: (-1, 0)
+diffX, diffY: 5, 2
+(9, 6) to (4, 8)
+newDir: (-1, 0)
+diffX, diffY: 5, 3
+(9, 6) to (4, 9)
+newDir: (-1, 0)
+diffX, diffY: 5, 3
+(9, 6) to (4, 9)
+newDir: (-1, 0)
+diffX, diffY: 5, 3
+(9, 6) to (4, 9)
+newDir: (-1, 0)
+diffX, diffY: 5, 3
+(9, 6) to (4, 9)
+newDir: (-1, 0)
+diffX, diffY: 5, 3
+(9, 6) to (4, 9)
+newDir: (-1, 0)
+diffX, diffY: 5, 3
+(9, 6) to (4, 9)
+newDir: (-1, 0)
+diffX, diffY: 5, 3
+(9, 6) to (4, 9)
+newDir: (-1, 0)
+diffX, diffY: 5, 3
+(9, 6) to (4, 9)
+newDir: (-1, 0)
+diffX, diffY: 5, 3
+(9, 6) to (4, 9)
+newDir: (-1, 0)
+diffX, diffY: 5, 3
+(9, 6) to (4, 9)
+newDir: (-1, 0)
+diffX, diffY: 5, 3
+(9, 6) to (4, 9)
+newDir: (-1, 0)
+diffX, diffY: 5, 3
+(9, 6) to (4, 9)
+newDir: (-1, 0)
+diffX, diffY: 5, 3
+(9, 6) to (4, 9)
+newDir: (-1, 0)
+diffX, diffY: 5, 3
+(9, 6) to (4, 9)
+newDir: (-1, 0)
+diffX, diffY: 5, 3
+(9, 6) to (4, 9)
+newDir: (-1, 0)
+diffX, diffY: 5, 3
+(9, 6) to (4, 9)
+newDir: (-1, 0)
+diffX, diffY: 5, 3
+(9, 6) to (4, 9)
+newDir: (-1, 0)
+diffX, diffY: 5, 3
+(9, 6) to (4, 9)
+newDir: (-1, 0)
+diffX, diffY: 5, 3
+(9, 6) to (4, 9)
+newDir: (-1, 0)
+diffX, diffY: 5, 3
+(9, 6) to (4, 9)
+newDir: (-1, 0)
+diffX, diffY: 5, 3
+(9, 6) to (4, 9)
+newDir: (-1, 0)
+diffX, diffY: 5, 3
+(9, 6) to (4, 9)
+newDir: (-1, 0)
+diffX, diffY: 5, 3
+(9, 6) to (4, 9)
+newDir: (-1, 0)
+diffX, diffY: 5, 3
+(9, 6) to (4, 9)
+newDir: (-1, 0)
+diffX, diffY: 5, 3
+(9, 6) to (4, 9)
+newDir: (-1, 0)
+diffX, diffY: 5, 3
+(9, 6) to (4, 9)
+newDir: (-1, 0)
+diffX, diffY: 5, 3
+(9, 6) to (4, 9)
+newDir: (-1, 0)
+diffX, diffY: 5, 3
+(9, 6) to (4, 9)
+newDir: (-1, 0)
+diffX, diffY: 5, 3
+(9, 6) to (4, 9)
+newDir: (-1, 0)
+diffX, diffY: 5, 3
+(9, 6) to (4, 9)
+newDir: (-1, 0)
+diffX, diffY: 5, 3
+(9, 6) to (4, 9)
+newDir: (-1, 0)
+diffX, diffY: 5, 3
+(9, 6) to (4, 9)
+newDir: (-1, 0)
+diffX, diffY: 5, 3
+(9, 6) to (4, 9)
+newDir: (-1, 0)
+diffX, diffY: 5, 3
+(9, 6) to (4, 9)
+newDir: (-1, 0)
+diffX, diffY: 5, 3
+(9, 6) to (4, 9)
+newDir: (-1, 0)
+diffX, diffY: 5, 3
+(9, 6) to (4, 9)
+newDir: (-1, 0)
+diffX, diffY: 5, 3
+(9, 6) to (4, 9)
+newDir: (-1, 0)
+diffX, diffY: 5, 3
+(9, 6) to (4, 9)
+newDir: (-1, 0)
+diffX, diffY: 5, 3
+(9, 6) to (4, 9)
+newDir: (-1, 0)
+diffX, diffY: 5, 3
+(9, 6) to (4, 9)
+newDir: (-1, 0)
+diffX, diffY: 5, 3
+(9, 6) to (4, 9)
+newDir: (-1, 0)
+diffX, diffY: 5, 3
+(9, 6) to (4, 9)
+newDir: (-1, 0)
+diffX, diffY: 5, 3
+(9, 6) to (4, 9)
+newDir: (-1, 0)
+diffX, diffY: 5, 3
+(9, 6) to (4, 9)
+newDir: (-1, 0)
+diffX, diffY: 5, 3
+(9, 6) to (4, 9)
+newDir: (-1, 0)
+diffX, diffY: 5, 3
+(9, 6) to (4, 9)
+newDir: (-1, 0)
+diffX, diffY: 5, 3
+(9, 6) to (4, 9)
+newDir: (-1, 0)
+diffX, diffY: 5, 3
+(9, 6) to (4, 9)
+newDir: (-1, 0)
+diffX, diffY: 5, 3
+(9, 6) to (4, 9)
+newDir: (-1, 0)
+diffX, diffY: 5, 3
+(9, 6) to (4, 9)
+newDir: (-1, 0)
+diffX, diffY: 4, 3
+(9, 6) to (5, 9)
+newDir: (-1, 0)
+diffX, diffY: 4, 3
+(9, 6) to (5, 9)
+newDir: (-1, 0)
+diffX, diffY: 4, 3
+(9, 6) to (5, 9)
+newDir: (-1, 0)
+diffX, diffY: 4, 3
+(9, 6) to (5, 9)
+newDir: (-1, 0)
+diffX, diffY: 4, 3
+(9, 6) to (5, 9)
+newDir: (-1, 0)
+diffX, diffY: 4, 3
+(9, 6) to (5, 9)
+newDir: (-1, 0)
+diffX, diffY: 4, 3
+(9, 6) to (5, 9)
+newDir: (-1, 0)
+diffX, diffY: 4, 3
+(9, 6) to (5, 9)
+newDir: (-1, 0)
+diffX, diffY: 4, 3
+(9, 6) to (5, 9)
+newDir: (-1, 0)
+diffX, diffY: 3, 3
+(9, 6) to (6, 9)
+newDir: (0, 1)
+diffX, diffY: 1, 2
+(9, 7) to (8, 9)
+newDir: (0, 1)
+diffX, diffY: 1, 3
+(9, 8) to (8, 11)
+newDir: (0, 1)
+diffX, diffY: 1, 4
+(9, 9) to (8, 13)
+newDir: (0, 1)
+diffX, diffY: 0, 4
+(9, 10) to (9, 14)
+newDir: (0, 1)
+diffX, diffY: 2, 3
+(9, 11) to (11, 14)
+newDir: (0, 1)
+diffX, diffY: 5, 2
+(9, 12) to (14, 14)
+newDir: (1, 0)
+diffX, diffY: 5, 2
+(10, 12) to (15, 14)
+newDir: (1, 0)
+diffX, diffY: 1, 2
+(11, 12) to (12, 14)
+newDir: (0, 1)
+diffX, diffY: 0, 2
+(11, 13) to (11, 15)
+newDir: (0, 1)
+diffX, diffY: 1, 2
+(11, 14) to (10, 16)
+newDir: (0, 1)
+diffX, diffY: 3, 1
+(11, 15) to (8, 16)
+newDir: (-1, 0)
+diffX, diffY: 3, 1
+(10, 15) to (7, 14)
+newDir: (-1, 0)
+diffX, diffY: 2, 3
+(9, 15) to (7, 12)
+newDir: (0, -1)
+diffX, diffY: 2, 3
+(9, 15) to (7, 12)
+newDir: (0, -1)
+diffX, diffY: 2, 3
+(9, 15) to (7, 12)
+newDir: (0, -1)
+diffX, diffY: 2, 3
+(9, 15) to (7, 12)
+newDir: (0, -1)
+diffX, diffY: 2, 3
+(9, 15) to (7, 12)
+newDir: (0, -1)
+diffX, diffY: 2, 3
+(9, 15) to (7, 12)
+newDir: (0, -1)
+diffX, diffY: 2, 4
+(9, 15) to (7, 11)
+newDir: (0, -1)
+diffX, diffY: 2, 4
+(9, 15) to (7, 11)
+newDir: (0, -1)
+diffX, diffY: 2, 4
+(9, 15) to (7, 11)
+newDir: (0, -1)
+diffX, diffY: 2, 4
+(9, 15) to (7, 11)
+newDir: (0, -1)
+diffX, diffY: 2, 4
+(9, 15) to (7, 11)
+newDir: (0, -1)
+diffX, diffY: 2, 4
+(9, 15) to (7, 11)
+newDir: (0, -1)
+diffX, diffY: 2, 4
+(9, 15) to (7, 11)
+newDir: (0, -1)
+diffX, diffY: 2, 4
+(9, 15) to (7, 11)
+newDir: (0, -1)
+diffX, diffY: 2, 4
+(9, 15) to (7, 11)
+newDir: (0, -1)
+diffX, diffY: 2, 5
+(9, 15) to (7, 10)
+newDir: (0, -1)
+diffX, diffY: 2, 5
+(9, 15) to (7, 10)
+newDir: (0, -1)
+diffX, diffY: 2, 5
+(9, 15) to (7, 10)
+newDir: (0, -1)
+diffX, diffY: 2, 5
+(9, 15) to (7, 10)
+newDir: (0, -1)
+diffX, diffY: 2, 5
+(9, 15) to (7, 10)
+newDir: (0, -1)
+diffX, diffY: 2, 5
+(9, 15) to (7, 10)
+newDir: (0, -1)
+diffX, diffY: 2, 5
+(9, 15) to (7, 10)
+newDir: (0, -1)
+diffX, diffY: 2, 5
+(9, 15) to (7, 10)
+newDir: (0, -1)
+diffX, diffY: 2, 5
+(9, 15) to (7, 10)
+newDir: (0, -1)
+diffX, diffY: 2, 6
+(9, 15) to (7, 9)
+newDir: (0, -1)
+diffX, diffY: 2, 6
+(9, 15) to (7, 9)
+newDir: (0, -1)
+diffX, diffY: 2, 6
+(9, 15) to (7, 9)
+newDir: (0, -1)
+diffX, diffY: 2, 6
+(9, 15) to (7, 9)
+newDir: (0, -1)
+diffX, diffY: 2, 6
+(9, 15) to (7, 9)
+newDir: (0, -1)
+diffX, diffY: 2, 6
+(9, 15) to (7, 9)
+newDir: (0, -1)
+diffX, diffY: 2, 6
+(9, 15) to (7, 9)
+newDir: (0, -1)
+diffX, diffY: 2, 6
+(9, 15) to (7, 9)
+newDir: (0, -1)
+diffX, diffY: 2, 6
+(9, 15) to (7, 9)
+newDir: (0, -1)
+diffX, diffY: 2, 7
+(9, 15) to (7, 8)
+newDir: (0, -1)
+diffX, diffY: 2, 7
+(9, 15) to (7, 8)
+newDir: (0, -1)
+diffX, diffY: 2, 7
+(9, 15) to (7, 8)
+newDir: (0, -1)
+diffX, diffY: 2, 7
+(9, 15) to (7, 8)
+newDir: (0, -1)
+diffX, diffY: 2, 7
+(9, 15) to (7, 8)
+newDir: (0, -1)
+diffX, diffY: 2, 7
+(9, 15) to (7, 8)
+newDir: (0, -1)
+diffX, diffY: 2, 7
+(9, 15) to (7, 8)
+newDir: (0, -1)
+diffX, diffY: 2, 7
+(9, 15) to (7, 8)
+newDir: (0, -1)
+diffX, diffY: 2, 7
+(9, 15) to (7, 8)
+newDir: (0, -1)
+diffX, diffY: 2, 8
+(9, 15) to (7, 7)
+newDir: (0, -1)
+diffX, diffY: 2, 8
+(9, 15) to (7, 7)
+newDir: (0, -1)
+diffX, diffY: 2, 8
+(9, 15) to (7, 7)
+newDir: (0, -1)
+diffX, diffY: 2, 8
+(9, 15) to (7, 7)
+newDir: (0, -1)
+diffX, diffY: 2, 8
+(9, 15) to (7, 7)
+newDir: (0, -1)
+diffX, diffY: 2, 8
+(9, 15) to (7, 7)
+newDir: (0, -1)
+diffX, diffY: 2, 8
+(9, 15) to (7, 7)
+newDir: (0, -1)
+diffX, diffY: 2, 8
+(9, 15) to (7, 7)
+newDir: (0, -1)
+diffX, diffY: 2, 8
+(9, 15) to (7, 7)
+newDir: (0, -1)
+diffX, diffY: 2, 9
+(9, 15) to (7, 6)
+newDir: (0, -1)
+diffX, diffY: 2, 9
+(9, 15) to (7, 6)
+newDir: (0, -1)
+diffX, diffY: 2, 9
+(9, 15) to (7, 6)
+newDir: (0, -1)
+diffX, diffY: 2, 9
+(9, 15) to (7, 6)
+newDir: (0, -1)
+diffX, diffY: 2, 9
+(9, 15) to (7, 6)
+newDir: (0, -1)
+diffX, diffY: 2, 9
+(9, 15) to (7, 6)
+newDir: (0, -1)
+diffX, diffY: 2, 9
+(9, 15) to (7, 6)
+newDir: (0, -1)
+diffX, diffY: 2, 9
+(9, 15) to (7, 6)
+newDir: (0, -1)
+diffX, diffY: 2, 9
+(9, 15) to (7, 6)
+newDir: (0, -1)
+diffX, diffY: 2, 9
+(9, 15) to (7, 6)
+newDir: (0, -1)
+diffX, diffY: 2, 9
+(9, 15) to (7, 6)
+newDir: (0, -1)
+diffX, diffY: 2, 9
+(9, 15) to (7, 6)
+newDir: (0, -1)
+diffX, diffY: 2, 9
+(9, 15) to (7, 6)
+newDir: (0, -1)
+diffX, diffY: 2, 9
+(9, 15) to (7, 6)
+newDir: (0, -1)
+diffX, diffY: 2, 9
+(9, 15) to (7, 6)
+newDir: (0, -1)
+diffX, diffY: 2, 9
+(9, 15) to (7, 6)
+newDir: (0, -1)
+diffX, diffY: 2, 9
+(9, 15) to (7, 6)
+newDir: (0, -1)
+diffX, diffY: 2, 10
+(9, 15) to (7, 5)
+newDir: (0, -1)
+diffX, diffY: 2, 10
+(9, 15) to (7, 5)
+newDir: (0, -1)
+diffX, diffY: 2, 10
+(9, 15) to (7, 5)
+newDir: (0, -1)
+diffX, diffY: 2, 10
+(9, 15) to (7, 5)
+newDir: (0, -1)
+diffX, diffY: 2, 10
+(9, 15) to (7, 5)
+newDir: (0, -1)
+diffX, diffY: 2, 10
+(9, 15) to (7, 5)
+newDir: (0, -1)
+diffX, diffY: 2, 10
+(9, 15) to (7, 5)
+newDir: (0, -1)
+diffX, diffY: 2, 10
+(9, 15) to (7, 5)
+newDir: (0, -1)
+diffX, diffY: 2, 10
+(9, 15) to (7, 5)
+newDir: (0, -1)
+diffX, diffY: 2, 10
+(9, 15) to (7, 5)
+newDir: (0, -1)
+diffX, diffY: 2, 10
+(9, 15) to (7, 5)
+newDir: (0, -1)
+diffX, diffY: 2, 10
+(9, 15) to (7, 5)
+newDir: (0, -1)
+diffX, diffY: 2, 10
+(9, 15) to (7, 5)
+newDir: (0, -1)
+diffX, diffY: 2, 10
+(9, 15) to (7, 5)
+newDir: (0, -1)
+diffX, diffY: 2, 10
+(9, 15) to (7, 5)
+newDir: (0, -1)
+diffX, diffY: 2, 10
+(9, 15) to (7, 5)
+newDir: (0, -1)
+diffX, diffY: 2, 9
+(9, 15) to (7, 6)
+newDir: (0, -1)
+diffX, diffY: 2, 9
+(9, 15) to (7, 6)
+newDir: (0, -1)
+diffX, diffY: 2, 9
+(9, 15) to (7, 6)
+newDir: (0, -1)
+diffX, diffY: 2, 9
+(9, 15) to (7, 6)
+newDir: (0, -1)
+diffX, diffY: 2, 9
+(9, 15) to (7, 6)
+newDir: (0, -1)
+diffX, diffY: 2, 9
+(9, 15) to (7, 6)
+newDir: (0, -1)
+diffX, diffY: 2, 9
+(9, 15) to (7, 6)
+newDir: (0, -1)
+diffX, diffY: 2, 9
+(9, 15) to (7, 6)
+newDir: (0, -1)
+diffX, diffY: 2, 9
+(9, 15) to (7, 6)
+newDir: (0, -1)
+diffX, diffY: 2, 9
+(9, 15) to (7, 6)
+newDir: (0, -1)
+diffX, diffY: 2, 9
+(9, 15) to (7, 6)
+newDir: (0, -1)
+diffX, diffY: 2, 9
+(9, 15) to (7, 6)
+newDir: (0, -1)
+diffX, diffY: 2, 9
+(9, 15) to (7, 6)
+newDir: (0, -1)
+diffX, diffY: 2, 9
+(9, 15) to (7, 6)
+newDir: (0, -1)
+diffX, diffY: 2, 9
+(9, 15) to (7, 6)
+newDir: (0, -1)
+diffX, diffY: 2, 9
+(9, 15) to (7, 6)
+newDir: (0, -1)
+diffX, diffY: 2, 9
+(9, 15) to (7, 6)
+newDir: (0, -1)
+diffX, diffY: 2, 9
+(9, 15) to (7, 6)
+newDir: (0, -1)
+diffX, diffY: 1, 9
+(9, 15) to (8, 6)
+newDir: (0, -1)
+diffX, diffY: 1, 9
+(9, 15) to (8, 6)
+newDir: (0, -1)
+diffX, diffY: 1, 9
+(9, 15) to (8, 6)
+newDir: (0, -1)
+diffX, diffY: 1, 9
+(9, 15) to (8, 6)
+newDir: (0, -1)
+diffX, diffY: 1, 9
+(9, 15) to (8, 6)
+newDir: (0, -1)
+diffX, diffY: 1, 9
+(9, 15) to (8, 6)
+newDir: (0, -1)
+diffX, diffY: 1, 9
+(9, 15) to (8, 6)
+newDir: (0, -1)
+diffX, diffY: 1, 9
+(9, 15) to (8, 6)
+newDir: (0, -1)
+diffX, diffY: 1, 9
+(9, 15) to (8, 6)
+newDir: (0, -1)
+diffX, diffY: 1, 9
+(9, 15) to (8, 6)
+newDir: (0, -1)
+diffX, diffY: 1, 9
+(9, 15) to (8, 6)
+newDir: (0, -1)
+diffX, diffY: 1, 9
+(9, 15) to (8, 6)
+newDir: (0, -1)
+diffX, diffY: 1, 9
+(9, 15) to (8, 6)
+newDir: (0, -1)
+diffX, diffY: 1, 9
+(9, 15) to (8, 6)
+newDir: (0, -1)
+diffX, diffY: 1, 9
+(9, 15) to (8, 6)
+newDir: (0, -1)
+diffX, diffY: 1, 9
+(9, 15) to (8, 6)
+newDir: (0, -1)
+diffX, diffY: 1, 9
+(9, 15) to (8, 6)
+newDir: (0, -1)
+diffX, diffY: 1, 9
+(9, 15) to (8, 6)
+newDir: (0, -1)
+diffX, diffY: 1, 9
+(9, 15) to (8, 6)
+newDir: (0, -1)
+diffX, diffY: 1, 9
+(9, 15) to (8, 6)
+newDir: (0, -1)
+diffX, diffY: 1, 9
+(9, 15) to (8, 6)
+newDir: (0, -1)
+diffX, diffY: 1, 9
+(9, 15) to (8, 6)
+newDir: (0, -1)
+diffX, diffY: 1, 9
+(9, 15) to (8, 6)
+newDir: (0, -1)
+diffX, diffY: 1, 9
+(9, 15) to (8, 6)
+newDir: (0, -1)
+diffX, diffY: 1, 9
+(9, 15) to (8, 6)
+newDir: (0, -1)
+diffX, diffY: 1, 9
+(9, 15) to (8, 6)
+newDir: (0, -1)
+diffX, diffY: 1, 9
+(9, 15) to (8, 6)
+newDir: (0, -1)
+diffX, diffY: 1, 9
+(9, 15) to (8, 6)
+newDir: (0, -1)
+diffX, diffY: 1, 9
+(9, 15) to (8, 6)
+newDir: (0, -1)
+diffX, diffY: 1, 9
+(9, 15) to (8, 6)
+newDir: (0, -1)
+diffX, diffY: 1, 9
+(9, 15) to (8, 6)
+newDir: (0, -1)
+diffX, diffY: 1, 9
+(9, 15) to (8, 6)
+newDir: (0, -1)
+diffX, diffY: 1, 9
+(9, 15) to (8, 6)
+newDir: (0, -1)
+diffX, diffY: 1, 9
+(9, 15) to (8, 6)
+newDir: (0, -1)
+diffX, diffY: 1, 9
+(9, 15) to (8, 6)
+newDir: (0, -1)
+diffX, diffY: 1, 9
+(9, 15) to (8, 6)
+newDir: (0, -1)
+diffX, diffY: 1, 9
+(9, 15) to (8, 6)
+newDir: (0, -1)
+diffX, diffY: 1, 9
+(9, 15) to (8, 6)
+newDir: (0, -1)
+diffX, diffY: 1, 9
+(9, 15) to (8, 6)
+newDir: (0, -1)
+diffX, diffY: 1, 9
+(9, 15) to (8, 6)
+newDir: (0, -1)
+diffX, diffY: 1, 9
+(9, 15) to (8, 6)
+newDir: (0, -1)
+diffX, diffY: 1, 9
+(9, 15) to (8, 6)
+newDir: (0, -1)
+diffX, diffY: 1, 9
+(9, 15) to (8, 6)
+newDir: (0, -1)
+diffX, diffY: 1, 9
+(9, 15) to (8, 6)
+newDir: (0, -1)
+diffX, diffY: 1, 9
+(9, 15) to (8, 6)
+newDir: (0, -1)
+diffX, diffY: 1, 9
+(9, 15) to (8, 6)
+newDir: (0, -1)
+diffX, diffY: 1, 9
+(9, 15) to (8, 6)
+newDir: (0, -1)
+diffX, diffY: 1, 9
+(9, 15) to (8, 6)
+newDir: (0, -1)
+diffX, diffY: 1, 9
+(9, 15) to (8, 6)
+newDir: (0, -1)
+diffX, diffY: 1, 9
+(9, 15) to (8, 6)
+newDir: (0, -1)
+diffX, diffY: 1, 9
+(9, 15) to (8, 6)
+newDir: (0, -1)
+diffX, diffY: 1, 9
+(9, 15) to (8, 6)
+newDir: (0, -1)
+diffX, diffY: 1, 9
+(9, 15) to (8, 6)
+newDir: (0, -1)
+diffX, diffY: 1, 9
+(9, 15) to (8, 6)
+newDir: (0, -1)
+diffX, diffY: 1, 9
+(9, 15) to (8, 6)
+newDir: (0, -1)
+diffX, diffY: 1, 9
+(9, 15) to (8, 6)
+newDir: (0, -1)
+diffX, diffY: 1, 9
+(9, 15) to (8, 6)
+newDir: (0, -1)
+diffX, diffY: 1, 9
+(9, 15) to (8, 6)
+newDir: (0, -1)
+diffX, diffY: 1, 9
+(9, 15) to (8, 6)
+newDir: (0, -1)
+diffX, diffY: 1, 9
+(9, 15) to (8, 6)
+newDir: (0, -1)
+diffX, diffY: 1, 9
+(9, 15) to (8, 6)
+newDir: (0, -1)
+diffX, diffY: 1, 9
+(9, 15) to (8, 6)
+newDir: (0, -1)
+diffX, diffY: 1, 9
+(9, 15) to (8, 6)
+newDir: (0, -1)
+diffX, diffY: 1, 9
+(9, 15) to (8, 6)
+newDir: (0, -1)
+diffX, diffY: 1, 9
+(9, 15) to (8, 6)
+newDir: (0, -1)
+diffX, diffY: 1, 9
+(9, 15) to (8, 6)
+newDir: (0, -1)
+diffX, diffY: 1, 9
+(9, 15) to (8, 6)
+newDir: (0, -1)
+diffX, diffY: 1, 9
+(9, 15) to (8, 6)
+newDir: (0, -1)
+diffX, diffY: 1, 9
+(9, 15) to (8, 6)
+newDir: (0, -1)
+diffX, diffY: 1, 9
+(9, 15) to (8, 6)
+newDir: (0, -1)
+diffX, diffY: 1, 9
+(9, 15) to (8, 6)
+newDir: (0, -1)
+diffX, diffY: 1, 9
+(9, 15) to (8, 6)
+newDir: (0, -1)
+diffX, diffY: 1, 9
+(9, 15) to (8, 6)
+newDir: (0, -1)
+diffX, diffY: 1, 9
+(9, 15) to (8, 6)
+newDir: (0, -1)
+diffX, diffY: 1, 9
+(9, 15) to (8, 6)
+newDir: (0, -1)
+diffX, diffY: 1, 9
+(9, 15) to (8, 6)
+newDir: (0, -1)
+diffX, diffY: 1, 9
+(9, 15) to (8, 6)
+newDir: (0, -1)
+diffX, diffY: 1, 9
+(9, 15) to (8, 6)
+newDir: (0, -1)
+diffX, diffY: 1, 9
+(9, 15) to (8, 6)
+newDir: (0, -1)
+diffX, diffY: 1, 9
+(9, 15) to (8, 6)
+newDir: (0, -1)
+diffX, diffY: 1, 9
+(9, 15) to (8, 6)
+newDir: (0, -1)
+diffX, diffY: 1, 9
+(9, 15) to (8, 6)
+newDir: (0, -1)
+diffX, diffY: 1, 9
+(9, 15) to (8, 6)
+newDir: (0, -1)
+diffX, diffY: 1, 9
+(9, 15) to (8, 6)
+newDir: (0, -1)
+diffX, diffY: 1, 9
+(9, 15) to (8, 6)
+newDir: (0, -1)
+diffX, diffY: 1, 9
+(9, 15) to (8, 6)
+newDir: (0, -1)
+diffX, diffY: 1, 9
+(9, 15) to (8, 6)
+newDir: (0, -1)
+diffX, diffY: 1, 9
+(9, 15) to (8, 6)
+newDir: (0, -1)
+diffX, diffY: 1, 9
+(9, 15) to (8, 6)
+newDir: (0, -1)
+diffX, diffY: 1, 9
+(9, 15) to (8, 6)
+newDir: (0, -1)
+diffX, diffY: 1, 9
+(9, 15) to (8, 6)
+newDir: (0, -1)
+diffX, diffY: 1, 9
+(9, 15) to (8, 6)
+newDir: (0, -1)
+diffX, diffY: 1, 9
+(9, 15) to (8, 6)
+newDir: (0, -1)
+diffX, diffY: 1, 9
+(9, 15) to (8, 6)
+newDir: (0, -1)
+diffX, diffY: 2, 9
+(9, 15) to (7, 6)
+newDir: (0, -1)
+diffX, diffY: 2, 9
+(9, 15) to (7, 6)
+newDir: (0, -1)
+diffX, diffY: 2, 9
+(9, 15) to (7, 6)
+newDir: (0, -1)
+diffX, diffY: 2, 9
+(9, 15) to (7, 6)
+newDir: (0, -1)
+diffX, diffY: 2, 9
+(9, 15) to (7, 6)
+newDir: (0, -1)
+diffX, diffY: 2, 9
+(9, 15) to (7, 6)
+newDir: (0, -1)
+diffX, diffY: 2, 9
+(9, 15) to (7, 6)
+newDir: (0, -1)
+diffX, diffY: 2, 9
+(9, 15) to (7, 6)
+newDir: (0, -1)
+diffX, diffY: 2, 9
+(9, 15) to (7, 6)
+newDir: (0, -1)
+diffX, diffY: 3, 9
+(9, 15) to (6, 6)
+newDir: (0, -1)
+diffX, diffY: 3, 9
+(9, 15) to (6, 6)
+newDir: (0, -1)
+diffX, diffY: 3, 9
+(9, 15) to (6, 6)
+newDir: (0, -1)
+diffX, diffY: 3, 9
+(9, 15) to (6, 6)
+newDir: (0, -1)
+diffX, diffY: 3, 9
+(9, 15) to (6, 6)
+newDir: (0, -1)
+diffX, diffY: 3, 9
+(9, 15) to (6, 6)
+newDir: (0, -1)
+diffX, diffY: 3, 9
+(9, 15) to (6, 6)
+newDir: (0, -1)
+diffX, diffY: 3, 9
+(9, 15) to (6, 6)
+newDir: (0, -1)
+diffX, diffY: 3, 9
+(9, 15) to (6, 6)
+newDir: (0, -1)
+diffX, diffY: 4, 9
+(9, 15) to (5, 6)
+newDir: (0, -1)
+diffX, diffY: 4, 9
+(9, 15) to (5, 6)
+newDir: (0, -1)
+diffX, diffY: 4, 9
+(9, 15) to (5, 6)
+newDir: (0, -1)
+diffX, diffY: 4, 9
+(9, 15) to (5, 6)
+newDir: (0, -1)
+diffX, diffY: 4, 9
+(9, 15) to (5, 6)
+newDir: (0, -1)
+diffX, diffY: 4, 9
+(9, 15) to (5, 6)
+newDir: (0, -1)
+diffX, diffY: 4, 9
+(9, 15) to (5, 6)
+newDir: (0, -1)
+diffX, diffY: 4, 9
+(9, 15) to (5, 6)
+newDir: (0, -1)
+diffX, diffY: 4, 9
+(9, 15) to (5, 6)
+newDir: (0, -1)
+diffX, diffY: 5, 9
+(9, 15) to (4, 6)
+newDir: (0, -1)
+diffX, diffY: 5, 9
+(9, 15) to (4, 6)
+newDir: (0, -1)
+diffX, diffY: 5, 9
+(9, 15) to (4, 6)
+newDir: (0, -1)
+diffX, diffY: 5, 9
+(9, 15) to (4, 6)
+newDir: (0, -1)
+diffX, diffY: 5, 9
+(9, 15) to (4, 6)
+newDir: (0, -1)
+diffX, diffY: 5, 9
+(9, 15) to (4, 6)
+newDir: (0, -1)
+diffX, diffY: 5, 9
+(9, 15) to (4, 6)
+newDir: (0, -1)
+diffX, diffY: 5, 9
+(9, 15) to (4, 6)
+newDir: (0, -1)
+diffX, diffY: 5, 9
+(9, 15) to (4, 6)
+newDir: (0, -1)
+diffX, diffY: 6, 9
+(9, 15) to (3, 6)
+newDir: (0, -1)
+diffX, diffY: 6, 9
+(9, 15) to (3, 6)
+newDir: (0, -1)
+diffX, diffY: 6, 9
+(9, 15) to (3, 6)
+newDir: (0, -1)
+diffX, diffY: 6, 9
+(9, 15) to (3, 6)
+newDir: (0, -1)
+diffX, diffY: 6, 9
+(9, 15) to (3, 6)
+newDir: (0, -1)
+diffX, diffY: 6, 9
+(9, 15) to (3, 6)
+newDir: (0, -1)
+diffX, diffY: 6, 9
+(9, 15) to (3, 6)
+newDir: (0, -1)
+diffX, diffY: 6, 9
+(9, 15) to (3, 6)
+newDir: (0, -1)
+diffX, diffY: 6, 9
+(9, 15) to (3, 6)
+newDir: (0, -1)
+diffX, diffY: 6, 8
+(9, 15) to (3, 7)
+newDir: (0, -1)
+diffX, diffY: 6, 8
+(9, 15) to (3, 7)
+newDir: (0, -1)
+diffX, diffY: 6, 8
+(9, 15) to (3, 7)
+newDir: (0, -1)
+diffX, diffY: 6, 8
+(9, 15) to (3, 7)
+newDir: (0, -1)
+diffX, diffY: 6, 8
+(9, 15) to (3, 7)
+newDir: (0, -1)
+diffX, diffY: 6, 8
+(9, 15) to (3, 7)
+newDir: (0, -1)
+diffX, diffY: 6, 8
+(9, 15) to (3, 7)
+newDir: (0, -1)
+diffX, diffY: 6, 8
+(9, 15) to (3, 7)
+newDir: (0, -1)
+diffX, diffY: 6, 8
+(9, 15) to (3, 7)
+newDir: (0, -1)
+diffX, diffY: 6, 7
+(9, 15) to (3, 8)
+newDir: (0, -1)
+diffX, diffY: 6, 7
+(9, 15) to (3, 8)
+newDir: (0, -1)
+diffX, diffY: 6, 7
+(9, 15) to (3, 8)
+newDir: (0, -1)
+diffX, diffY: 6, 7
+(9, 15) to (3, 8)
+newDir: (0, -1)
+diffX, diffY: 6, 7
+(9, 15) to (3, 8)
+newDir: (0, -1)
+diffX, diffY: 6, 7
+(9, 15) to (3, 8)
+newDir: (0, -1)
+diffX, diffY: 6, 7
+(9, 15) to (3, 8)
+newDir: (0, -1)
+diffX, diffY: 6, 7
+(9, 15) to (3, 8)
+newDir: (0, -1)
+diffX, diffY: 6, 7
+(9, 15) to (3, 8)
+newDir: (0, -1)
+diffX, diffY: 6, 6
+(9, 15) to (3, 9)
+newDir: (0, -1)
+diffX, diffY: 6, 6
+(9, 15) to (3, 9)
+newDir: (0, -1)
+diffX, diffY: 6, 6
+(9, 15) to (3, 9)
+newDir: (0, -1)
+diffX, diffY: 6, 6
+(9, 15) to (3, 9)
+newDir: (0, -1)
+diffX, diffY: 6, 6
+(9, 15) to (3, 9)
+newDir: (0, -1)
+diffX, diffY: 6, 6
+(9, 15) to (3, 9)
+newDir: (0, -1)
+diffX, diffY: 6, 6
+(9, 15) to (3, 9)
+newDir: (0, -1)
+diffX, diffY: 6, 6
+(9, 15) to (3, 9)
+newDir: (0, -1)
+diffX, diffY: 6, 6
+(9, 15) to (3, 9)
+newDir: (0, -1)
+diffX, diffY: 6, 5
+(9, 15) to (3, 10)
+newDir: (-1, 0)
+diffX, diffY: 5, 4
+(8, 15) to (3, 11)
+newDir: (-1, 0)
+diffX, diffY: 4, 4
+(7, 15) to (3, 11)
+newDir: (0, -1)
+diffX, diffY: 4, 3
+(7, 14) to (3, 11)
+newDir: (-1, 0)
+diffX, diffY: 3, 3
+(6, 14) to (3, 11)
+newDir: (0, -1)
+diffX, diffY: 3, 4
+(6, 13) to (3, 9)
+newDir: (0, -1)
+diffX, diffY: 3, 5
+(6, 12) to (3, 7)
+newDir: (0, -1)
+diffX, diffY: 1, 5
+(6, 11) to (5, 6)
+newDir: (0, -1)
+diffX, diffY: 1, 4
+(6, 10) to (7, 6)
+newDir: (0, -1)
+diffX, diffY: 3, 3
+(6, 9) to (9, 6)
+newDir: (0, -1)
+diffX, diffY: 5, 2
+(6, 8) to (11, 6)
+newDir: (1, 0)
+diffX, diffY: 4, 1
+(7, 8) to (11, 9)
+newDir: (1, 0)
+diffX, diffY: 3, 3
+(8, 8) to (11, 11)
+newDir: (0, 1)
+diffX, diffY: 3, 4
+(8, 9) to (11, 13)
+newDir: (0, 1)
+diffX, diffY: 2, 4
+(8, 10) to (10, 14)
+newDir: (0, 1)
+diffX, diffY: 1, 3
+(8, 11) to (9, 14)
+newDir: (0, 1)
+diffX, diffY: 1, 0
+(8, 12) to (9, 12)
+newDir: (1, 0)
